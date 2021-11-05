@@ -17,14 +17,15 @@ struct TabbarView: View {
                 Button(action:{system.tabitem = item}){
                     Image(systemName: item.icon).font(.system(size: 20))
                         .foregroundColor(
-                            system.tabitem == item ? Color("SplashScreenColor") : .secondary
+                            system.tabitem == item ? Color("AppAccentColor") : .secondary
                         )
                         .frame(height:35)
                 }
                 Spacer()
             }
         }.padding(.vertical,10)
-        .background(Color.init(uiColor: .systemBackground).shadow(radius: 2).ignoresSafeArea())
+        .navigationTitle("").navigationBarHidden(true)
+        .background(Color.white.shadow(radius: 2).ignoresSafeArea())
     }
 }
 

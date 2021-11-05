@@ -11,16 +11,21 @@ struct TopbarView: View {
     var body: some View {
         HStack{
             VStack(alignment:.leading){
-                Text("중앙대").font(.system(size: 25, weight: .bold, design: .default))
-                Text("서울캠퍼스").font(.system(size: 12, weight: .medium, design: .default))
+                Text("중앙대")
+                    .font(.custom("DoHyeon-Regular", size: 25))
+                Text("서울캠퍼스")
+                    .font(.custom("DoHyeon-Regular", size: 12))
             }
             Spacer()
             Button(action:{}){
                 Image(systemName: "gearshape.fill").font(.system(size: 20))
             }
-        }.padding(.horizontal,10)
-        .foregroundColor(Color("SplashScreenColor"))
-        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+        }.padding(.horizontal)
+        .padding(.vertical)
+        .foregroundColor(Color("AppAccentColor"))
+        .navigationTitle("").navigationBarHidden(true)
+        .background(Color.white.ignoresSafeArea())
+        
     }
 }
 

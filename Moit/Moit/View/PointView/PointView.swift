@@ -10,6 +10,7 @@ import SwiftUI
 struct PointView: View {
     var body: some View {
         Text("PointView")
+            .navigationTitle("").navigationBarHidden(true)
     }
 }
 

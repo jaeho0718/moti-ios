@@ -14,14 +14,14 @@ struct SplashView: View {
         ZStack(alignment:.topTrailing){
             if isOpen{
                 Rectangle()
-                    .foregroundColor(Color("SplashScreenColor"))
+                    .foregroundColor(Color("AppAccentColor"))
                     .ignoresSafeArea()
-                VStack(alignment:.trailing){
+                VStack(alignment:.trailing,spacing: 11){
                     Group{
                         Text("한번에")
                         Text("빠르게")
                         Text("moit")
-                    }.font(.system(size: 49, weight: .heavy, design: .default))
+                    }.font(.custom("DoHyeon-Regular", size: 49))
                     .foregroundColor(.white)
                 }.padding(.top,130)
                 .padding(.trailing,29)

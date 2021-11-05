@@ -10,6 +10,7 @@ import SwiftUI
 struct NotiView: View {
     var body: some View {
         Text("NotiView")
+            .navigationTitle("").navigationBarHidden(true)
     }
 }
 
