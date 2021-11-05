@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C33F0078E90C6C6352EA12C /* libPods-Moit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D286E4817B24937B40C5512C /* libPods-Moit.a */; };
 		A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D8D27351248003ECBD5 /* MoitApp.swift */; };
 		A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D8F27351248003ECBD5 /* ContentView.swift */; };
 		A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65B1D9127351249003ECBD5 /* Assets.xcassets */; };
@@ -22,9 +23,17 @@
 		A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DB827351DC6003ECBD5 /* PointView.swift */; };
 		A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */; };
 		A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DBE27352289003ECBD5 /* TopbarView.swift */; };
+		A65B1DC227357004003ECBD5 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DC127357004003ECBD5 /* SectionView.swift */; };
+		A65B1DC42735765A003ECBD5 /* PostMiniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DC32735765A003ECBD5 /* PostMiniView.swift */; };
+		A65B1DC8273576B0003ECBD5 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DC7273576B0003ECBD5 /* AsyncImageLoader.swift */; };
+		A65B1DCA273576DD003ECBD5 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DC9273576DD003ECBD5 /* AsyncImageView.swift */; };
+		A65B1DCD27357C2D003ECBD5 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A65B1DCC27357C2D003ECBD5 /* DoHyeon-Regular.ttf */; };
+		A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18BF286199ADB89B02510FCE /* Pods-Moit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moit.release.xcconfig"; path = "Target Support Files/Pods-Moit/Pods-Moit.release.xcconfig"; sourceTree = "<group>"; };
+		2A46BEE48D45D9139CDEABD0 /* Pods-Moit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moit.debug.xcconfig"; path = "Target Support Files/Pods-Moit/Pods-Moit.debug.xcconfig"; sourceTree = "<group>"; };
 		A65B1D8A27351248003ECBD5 /* Moit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65B1D8D27351248003ECBD5 /* MoitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitApp.swift; sourceTree = "<group>"; };
 		A65B1D8F27351248003ECBD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +50,14 @@
 		A65B1DB827351DC6003ECBD5 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
 		A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A65B1DBE27352289003ECBD5 /* TopbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopbarView.swift; sourceTree = "<group>"; };
+		A65B1DC027356480003ECBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A65B1DC127357004003ECBD5 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		A65B1DC32735765A003ECBD5 /* PostMiniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMiniView.swift; sourceTree = "<group>"; };
+		A65B1DC7273576B0003ECBD5 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
+		A65B1DC9273576DD003ECBD5 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		A65B1DCC27357C2D003ECBD5 /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DoHyeon-Regular.ttf"; path = "../../../Assets/Font/DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
+		A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,17 +65,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C33F0078E90C6C6352EA12C /* libPods-Moit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B35600065163617D222C514 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A46BEE48D45D9139CDEABD0 /* Pods-Moit.debug.xcconfig */,
+				18BF286199ADB89B02510FCE /* Pods-Moit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A65B1D8127351248003ECBD5 = {
 			isa = PBXGroup;
 			children = (
 				A65B1D8C27351248003ECBD5 /* Moit */,
 				A65B1D8B27351248003ECBD5 /* Products */,
+				3B35600065163617D222C514 /* Pods */,
+				AB25B5AD837D258F1D37CAE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +102,8 @@
 		A65B1D8C27351248003ECBD5 /* Moit */ = {
 			isa = PBXGroup;
 			children = (
+				A65B1DCB27357C22003ECBD5 /* Font */,
+				A65B1DC027356480003ECBD5 /* Info.plist */,
 				A65B1D8D27351248003ECBD5 /* MoitApp.swift */,
 				A65B1D9D2735126D003ECBD5 /* Model */,
 				A65B1D9C27351266003ECBD5 /* ViewModel */,
@@ -111,6 +142,7 @@
 			children = (
 				A65B1DA3273516F4003ECBD5 /* SystemViewModel.swift */,
 				A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */,
+				A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,7 +176,9 @@
 		A65B1DAA27351B6B003ECBD5 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				A65B1DC527357691003ECBD5 /* PostMiniView */,
 				A65B1DB427351BC0003ECBD5 /* HomeView.swift */,
+				A65B1DC127357004003ECBD5 /* SectionView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -188,6 +222,40 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
+		A65B1DC527357691003ECBD5 /* PostMiniView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DC62735769C003ECBD5 /* AsyncImageLoader */,
+				A65B1DC32735765A003ECBD5 /* PostMiniView.swift */,
+			);
+			path = PostMiniView;
+			sourceTree = "<group>";
+		};
+		A65B1DC62735769C003ECBD5 /* AsyncImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DC7273576B0003ECBD5 /* AsyncImageLoader.swift */,
+				A65B1DC9273576DD003ECBD5 /* AsyncImageView.swift */,
+			);
+			path = AsyncImageLoader;
+			sourceTree = "<group>";
+		};
+		A65B1DCB27357C22003ECBD5 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DCC27357C2D003ECBD5 /* DoHyeon-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AB25B5AD837D258F1D37CAE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D286E4817B24937B40C5512C /* libPods-Moit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A65B1D9827351249003ECBD5 /* Build configuration list for PBXNativeTarget "Moit" */;
 			buildPhases = (
+				2AF0F9FB74458C824F49B1C0 /* [CP] Check Pods Manifest.lock */,
 				A65B1D8627351248003ECBD5 /* Sources */,
 				A65B1D8727351248003ECBD5 /* Frameworks */,
 				A65B1D8827351248003ECBD5 /* Resources */,
@@ -247,11 +316,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65B1D9527351249003ECBD5 /* Preview Assets.xcassets in Resources */,
+				A65B1DCD27357C2D003ECBD5 /* DoHyeon-Regular.ttf in Resources */,
 				A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AF0F9FB74458C824F49B1C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A65B1D8627351248003ECBD5 /* Sources */ = {
@@ -260,14 +355,19 @@
 			files = (
 				A65B1DA927351810003ECBD5 /* TabbarView.swift in Sources */,
 				A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */,
+				A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */,
 				A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */,
 				A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */,
 				A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */,
+				A65B1DC42735765A003ECBD5 /* PostMiniView.swift in Sources */,
 				A65B1DAF27351B8E003ECBD5 /* SearchView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
+				A65B1DC8273576B0003ECBD5 /* AsyncImageLoader.swift in Sources */,
 				A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */,
 				A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */,
+				A65B1DC227357004003ECBD5 /* SectionView.swift in Sources */,
+				A65B1DCA273576DD003ECBD5 /* AsyncImageView.swift in Sources */,
 				A65B1DB327351BA6003ECBD5 /* AccountView.swift in Sources */,
 				A65B1DB127351B99003ECBD5 /* NotiView.swift in Sources */,
 				A65B1D9F27351296003ECBD5 /* DataModel.swift in Sources */,
@@ -395,6 +495,7 @@
 		};
 		A65B1D9927351249003ECBD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A46BEE48D45D9139CDEABD0 /* Pods-Moit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,11 +505,12 @@
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -424,6 +526,7 @@
 		};
 		A65B1D9A27351249003ECBD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BF286199ADB89B02510FCE /* Pods-Moit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,11 +536,12 @@
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
