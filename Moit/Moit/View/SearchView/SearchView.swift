@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var searchText : String = ""
+    
+    
     var body: some View {
-        Text("SearchView")
-            .navigationTitle("").navigationBarHidden(true)
+        VStack{
+            
+            TextField("오늘은 어떤 음식을 모잇할까요?", text: $searchText)
+                .textFieldStyle(SearchTextFieldStyle(searchAction: {})).padding(.horizontal)
+                .padding(.top)
+            
+            ScrollView{
+                
+            }
+        }
+        .navigationTitle("").navigationBarHidden(true)
     }
 }
 

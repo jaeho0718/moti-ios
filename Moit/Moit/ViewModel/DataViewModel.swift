@@ -8,7 +8,7 @@
 import Foundation
 
 class DataViewModel : ObservableObject {
-    @Published var latestPosts : [Post] = [ .init(id: 0, writer_id: 0, title: "교촌 치킨"
+    @Published var Posts : [Post] = [ .init(id: 0, writer_id: 0, title: "교촌 치킨"
                                                   ,content: "", location_id: 0,
                                                   max_participants: 10, price: 10, delivery_fee: 10)
                                             ,.init(id: 1, writer_id: 0, title: "교촌 치킨"
@@ -21,6 +21,15 @@ class DataViewModel : ObservableObject {
                                                    ,content: "", location_id: 0,
                                                 max_participants: 10, price: 10, delivery_fee: 10)
                                             ,.init(id: 4, writer_id: 0, title: "교촌 치킨"
+                                                   ,content: "", location_id: 0,
+                                                   max_participants: 10, price: 10, delivery_fee: 10)
+                                            ,.init(id: 5, writer_id: 0, title: "교촌 치킨"
+                                                   ,content: "", location_id: 0,
+                                                   max_participants: 10, price: 10, delivery_fee: 10)
+                                            ,.init(id: 6, writer_id: 0, title: "교촌 치킨"
+                                                   ,content: "", location_id: 0,
+                                                   max_participants: 10, price: 10, delivery_fee: 10)
+                                            ,.init(id: 7, writer_id: 0, title: "교촌 치킨"
                                                    ,content: "", location_id: 0,
                                                    max_participants: 10, price: 10, delivery_fee: 10)
                                           ]

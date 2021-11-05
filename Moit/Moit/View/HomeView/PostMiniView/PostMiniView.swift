@@ -20,7 +20,9 @@ struct PostMiniView: View {
             }).aspectRatio(contentMode: .fill).frame(width: 80, height: 80, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: 6))
             VStack(alignment : .leading, spacing : 0){
-                Text(post.title).font(.system(size: 13, weight: .semibold, design: .default))
+                Text(post.title)
+                    .foregroundColor(.primary)
+                    .font(.system(size: 13, weight: .semibold, design: .default))
                 Group{
                     Text("허니콤보").font(.system(size: 12, weight: .medium, design: .default))
                     Text("1/2명").font(.system(size: 10, weight: .medium, design: .default))

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct PointView: View {
     var body: some View {
-        Text("PointView")
-            .navigationTitle("").navigationBarHidden(true)
+        ScrollView{
+            
+        }
+        .background(Color("GroupedBackgroundColor").ignoresSafeArea())
+        .navigationTitle("").navigationBarHidden(true)
     }
 }
 

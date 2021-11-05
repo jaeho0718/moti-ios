@@ -11,13 +11,18 @@ struct HomeView: View {
     @EnvironmentObject var dataViewmodel : DataViewModel
     
     var body: some View {
-        ScrollView{
-            SectionView(title: "최근", posts: $dataViewmodel.latestPosts){}
-            
-            SectionView(title: "마감임박", posts: $dataViewmodel.latestPosts){}
+        VStack(spacing:0){
+            TopbarView()
+            ScrollView(.vertical, showsIndicators: false){
+                SectionView(title: "최근", posts: $dataViewmodel.Posts){}
+                
+                SectionView(title: "마감임박", posts: $dataViewmodel.Posts){}
+                
+                FoodListView()
+            }
+            .background(Color("GroupedBackgroundColor").ignoresSafeArea())
         }
         .navigationTitle("").navigationBarHidden(true)
-        .background(Color("GroupedBackgroundColor").ignoresSafeArea())
     }
 }
 

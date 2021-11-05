@@ -14,23 +14,25 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack(spacing:0){
-                TopbarView()
-                TabView(selection: $system.tabitem){
-                    HomeView()
-                        .tag(SystemViewModel.TabItems.home)
-                        .environmentObject(dataViewmodel)
-                    SearchView()
-                        .tag(SystemViewModel.TabItems.search)
-                    PointView()
-                        .tag(SystemViewModel.TabItems.point)
-                    NotiView()
-                        .tag(SystemViewModel.TabItems.noti)
-                    AccountView()
-                        .tag(SystemViewModel.TabItems.account)
-                }
+                Group{
+                    switch system.tabitem{
+                    case .home :
+                        HomeView()
+                            .environmentObject(dataViewmodel)
+                    case .search :
+                        SearchView()
+                    case .point :
+                        PointView()
+                    case .noti :
+                        NotiView()
+                    case .account :
+                        AccountView()
+                    }
+                }.frame(maxWidth:.infinity,maxHeight: .infinity)
                 TabbarView().environmentObject(system)
             }
         }.navigationViewStyle(.stack)
+        //.overlay(SplashView())
     }
 }
 

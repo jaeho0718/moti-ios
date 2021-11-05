@@ -23,7 +23,6 @@ struct TopbarView: View {
         }.padding(.horizontal)
         .padding(.vertical)
         .foregroundColor(Color("AppAccentColor"))
-        .navigationTitle("").navigationBarHidden(true)
         .background(Color.white.ignoresSafeArea())
         
     }
