@@ -33,4 +33,11 @@ class DataViewModel : ObservableObject {
                                                    ,content: "", location_id: 0,
                                                    max_participants: 10, price: 10, delivery_fee: 10)
                                           ]
+    @Published var usageItems : [Usage] = [
+        .init(id: 0, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
+        ,.init(id: 1, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
+        ,.init(id: 2, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
+        ,.init(id: 3, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
+        ,.init(id: 4, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
+    ]
 }

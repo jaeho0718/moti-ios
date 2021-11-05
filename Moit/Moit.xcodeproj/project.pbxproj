@@ -30,6 +30,14 @@
 		A65B1DCD27357C2D003ECBD5 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A65B1DCC27357C2D003ECBD5 /* DoHyeon-Regular.ttf */; };
 		A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */; };
 		A699C58F27359CD100ECBA5D /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C58E27359CD100ECBA5D /* TextFieldStyles.swift */; };
+		A699C5912735A4CA00ECBA5D /* NotiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C5902735A4CA00ECBA5D /* NotiCellView.swift */; };
+		A699C5932735A6D400ECBA5D /* NotificationViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C5922735A6D400ECBA5D /* NotificationViewmodel.swift */; };
+		A699C5962735A83400ECBA5D /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C5952735A83400ECBA5D /* NotificationModel.swift */; };
+		A699C5982735AA4300ECBA5D /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C5972735AA4300ECBA5D /* DateModel.swift */; };
+		A699C59B2735AF5D00ECBA5D /* MoitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C59A2735AF5D00ECBA5D /* MoitView.swift */; };
+		A699C59E2735B3C100ECBA5D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C59D2735B3C100ECBA5D /* UserInfoView.swift */; };
+		A699C5A02735B52F00ECBA5D /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C59F2735B52F00ECBA5D /* UserInfoCell.swift */; };
+		A699C5A22735B5DC00ECBA5D /* UsageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C5A12735B5DC00ECBA5D /* UsageListView.swift */; };
 		A6A2BBBF27358B1D00949BB3 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2BBBE27358B1D00949BB3 /* FoodListView.swift */; };
 		A6A2BBC427358F9500949BB3 /* FoodCategoryMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2BBC327358F9500949BB3 /* FoodCategoryMenuBarView.swift */; };
 		A6A2BBC6273591C200949BB3 /* PostMidiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2BBC5273591C200949BB3 /* PostMidiumView.swift */; };
@@ -62,6 +70,14 @@
 		A65B1DCC27357C2D003ECBD5 /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DoHyeon-Regular.ttf"; path = "../../../Assets/Font/DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
 		A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		A699C58E27359CD100ECBA5D /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		A699C5902735A4CA00ECBA5D /* NotiCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiCellView.swift; sourceTree = "<group>"; };
+		A699C5922735A6D400ECBA5D /* NotificationViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewmodel.swift; sourceTree = "<group>"; };
+		A699C5952735A83400ECBA5D /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		A699C5972735AA4300ECBA5D /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+		A699C59A2735AF5D00ECBA5D /* MoitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitView.swift; sourceTree = "<group>"; };
+		A699C59D2735B3C100ECBA5D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		A699C59F2735B52F00ECBA5D /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		A699C5A12735B5DC00ECBA5D /* UsageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageListView.swift; sourceTree = "<group>"; };
 		A6A2BBBE27358B1D00949BB3 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 		A6A2BBC327358F9500949BB3 /* FoodCategoryMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryMenuBarView.swift; sourceTree = "<group>"; };
 		A6A2BBC5273591C200949BB3 /* PostMidiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMidiumView.swift; sourceTree = "<group>"; };
@@ -133,10 +149,10 @@
 		A65B1D9B27351254003ECBD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A699C58D27359CC700ECBA5D /* Style */,
 				A65B1DA5273517F5003ECBD5 /* ContentView */,
+				A699C5992735AF5600ECBA5D /* Moitview */,
+				A699C58D27359CC700ECBA5D /* Style */,
 				A65B1DBA2735200F003ECBD5 /* LoginView */,
-				A65B1DB627351DB1003ECBD5 /* PointView */,
 				A65B1DAA27351B6B003ECBD5 /* HomeView */,
 				A65B1DAD27351B83003ECBD5 /* AccountView */,
 				A65B1DAC27351B7D003ECBD5 /* NotiView */,
@@ -152,6 +168,7 @@
 				A65B1DA3273516F4003ECBD5 /* SystemViewModel.swift */,
 				A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */,
 				A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */,
+				A699C5922735A6D400ECBA5D /* NotificationViewmodel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -160,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				A65B1D9E27351296003ECBD5 /* DataModel.swift */,
+				A699C5952735A83400ECBA5D /* NotificationModel.swift */,
+				A699C5972735AA4300ECBA5D /* DateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				A65B1DB027351B99003ECBD5 /* NotiView.swift */,
+				A699C5902735A4CA00ECBA5D /* NotiCellView.swift */,
 			);
 			path = NotiView;
 			sourceTree = "<group>";
@@ -212,6 +232,9 @@
 		A65B1DAD27351B83003ECBD5 /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
+				A699C5A32735B96A00ECBA5D /* UsageListView */,
+				A699C59C2735B3B100ECBA5D /* UserInfoView */,
+				A65B1DB627351DB1003ECBD5 /* PointView */,
 				A65B1DB227351BA6003ECBD5 /* AccountView.swift */,
 			);
 			path = AccountView;
@@ -264,6 +287,31 @@
 				A699C58E27359CD100ECBA5D /* TextFieldStyles.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		A699C5992735AF5600ECBA5D /* Moitview */ = {
+			isa = PBXGroup;
+			children = (
+				A699C59A2735AF5D00ECBA5D /* MoitView.swift */,
+			);
+			path = Moitview;
+			sourceTree = "<group>";
+		};
+		A699C59C2735B3B100ECBA5D /* UserInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				A699C59D2735B3C100ECBA5D /* UserInfoView.swift */,
+				A699C59F2735B52F00ECBA5D /* UserInfoCell.swift */,
+			);
+			path = UserInfoView;
+			sourceTree = "<group>";
+		};
+		A699C5A32735B96A00ECBA5D /* UsageListView */ = {
+			isa = PBXGroup;
+			children = (
+				A699C5A12735B5DC00ECBA5D /* UsageListView.swift */,
+			);
+			path = UsageListView;
 			sourceTree = "<group>";
 		};
 		A6A2BBC027358B5B00949BB3 /* FoodListView */ = {
@@ -382,7 +430,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65B1DA927351810003ECBD5 /* TabbarView.swift in Sources */,
+				A699C5932735A6D400ECBA5D /* NotificationViewmodel.swift in Sources */,
 				A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */,
+				A699C5982735AA4300ECBA5D /* DateModel.swift in Sources */,
 				A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */,
 				A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */,
 				A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */,
@@ -390,13 +440,19 @@
 				A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */,
 				A65B1DC42735765A003ECBD5 /* PostMiniView.swift in Sources */,
 				A65B1DAF27351B8E003ECBD5 /* SearchView.swift in Sources */,
+				A699C5912735A4CA00ECBA5D /* NotiCellView.swift in Sources */,
+				A699C59B2735AF5D00ECBA5D /* MoitView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
+				A699C59E2735B3C100ECBA5D /* UserInfoView.swift in Sources */,
+				A699C5962735A83400ECBA5D /* NotificationModel.swift in Sources */,
 				A65B1DC8273576B0003ECBD5 /* AsyncImageLoader.swift in Sources */,
 				A6A2BBC6273591C200949BB3 /* PostMidiumView.swift in Sources */,
 				A6A2BBBF27358B1D00949BB3 /* FoodListView.swift in Sources */,
 				A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */,
 				A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */,
+				A699C5A22735B5DC00ECBA5D /* UsageListView.swift in Sources */,
+				A699C5A02735B52F00ECBA5D /* UserInfoCell.swift in Sources */,
 				A65B1DC227357004003ECBD5 /* SectionView.swift in Sources */,
 				A6A2BBC427358F9500949BB3 /* FoodCategoryMenuBarView.swift in Sources */,
 				A65B1DCA273576DD003ECBD5 /* AsyncImageView.swift in Sources */,

@@ -12,14 +12,14 @@ class SystemViewModel : ObservableObject{
     @Published var tabitem : TabItems = .home
     
     enum TabItems : Identifiable,CaseIterable{
-        case home,search,point,noti,account
+        case home,search,moit,noti,account
         var id : Int{
             switch self {
             case .home:
                 return 0
             case .search:
                 return 1
-            case .point:
+            case .moit:
                 return 2
             case .noti:
                 return 3
@@ -33,8 +33,8 @@ class SystemViewModel : ObservableObject{
                 return "house.fill"
             case .search:
                 return "magnifyingglass"
-            case .point:
-                return "p.circle.fill"
+            case .moit:
+                return "plus"
             case .noti:
                 return "bell.fill"
             case .account:
@@ -47,8 +47,8 @@ class SystemViewModel : ObservableObject{
                 return "홈"
             case .search:
                 return "검색"
-            case .point:
-                return "포인트"
+            case .moit:
+                return "추가하기"
             case .noti:
                 return "알림"
             case .account:

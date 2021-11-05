@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var system = SystemViewModel()
     @StateObject var dataViewmodel = DataViewModel()
+    @StateObject var loginViewmodel = LoginViewModel()
     
     var body: some View {
         NavigationView{
@@ -21,12 +22,14 @@ struct ContentView: View {
                             .environmentObject(dataViewmodel)
                     case .search :
                         SearchView()
-                    case .point :
-                        PointView()
+                    case .moit :
+                        MoitView()
                     case .noti :
                         NotiView()
                     case .account :
                         AccountView()
+                            .environmentObject(dataViewmodel)
+                            .environmentObject(loginViewmodel)
                     }
                 }.frame(maxWidth:.infinity,maxHeight: .infinity)
                 TabbarView().environmentObject(system)

@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct AccountView: View {
+    @EnvironmentObject var dataViewmodel : DataViewModel
+    
     var body: some View {
-        Text("AccountView")
-            .navigationTitle("").navigationBarHidden(true)
+        ScrollView(.vertical,showsIndicators: false){
+            UserInfoView()
+            PointView()
+            UsageListView(usageDatas: $dataViewmodel.usageItems)
+        }
+        .background(Color("GroupedBackgroundColor").ignoresSafeArea())
+        .navigationTitle("").navigationBarHidden(true)
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView().environmentObject(DataViewModel())
     }
 }

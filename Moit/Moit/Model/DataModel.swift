@@ -147,3 +147,10 @@ struct Location : Identifiable,Codable{
     var latitude : Float
     var longitude : Float
 }
+
+struct Usage : Identifiable {
+    var id : Int
+    var date : Date
+    var point : Int
+    var restraunt : String //나중에 id로 교체할 것
+}
