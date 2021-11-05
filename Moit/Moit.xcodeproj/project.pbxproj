@@ -11,6 +11,17 @@
 		A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D8F27351248003ECBD5 /* ContentView.swift */; };
 		A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65B1D9127351249003ECBD5 /* Assets.xcassets */; };
 		A65B1D9527351249003ECBD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65B1D9427351249003ECBD5 /* Preview Assets.xcassets */; };
+		A65B1D9F27351296003ECBD5 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D9E27351296003ECBD5 /* DataModel.swift */; };
+		A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DA12735138E003ECBD5 /* SplashView.swift */; };
+		A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DA3273516F4003ECBD5 /* SystemViewModel.swift */; };
+		A65B1DA927351810003ECBD5 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DA827351810003ECBD5 /* TabbarView.swift */; };
+		A65B1DAF27351B8E003ECBD5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DAE27351B8E003ECBD5 /* SearchView.swift */; };
+		A65B1DB127351B99003ECBD5 /* NotiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DB027351B99003ECBD5 /* NotiView.swift */; };
+		A65B1DB327351BA6003ECBD5 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DB227351BA6003ECBD5 /* AccountView.swift */; };
+		A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DB427351BC0003ECBD5 /* HomeView.swift */; };
+		A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DB827351DC6003ECBD5 /* PointView.swift */; };
+		A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */; };
+		A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1DBE27352289003ECBD5 /* TopbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,17 @@
 		A65B1D8F27351248003ECBD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A65B1D9127351249003ECBD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A65B1D9427351249003ECBD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A65B1D9E27351296003ECBD5 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		A65B1DA12735138E003ECBD5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A65B1DA3273516F4003ECBD5 /* SystemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewModel.swift; sourceTree = "<group>"; };
+		A65B1DA827351810003ECBD5 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		A65B1DAE27351B8E003ECBD5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A65B1DB027351B99003ECBD5 /* NotiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiView.swift; sourceTree = "<group>"; };
+		A65B1DB227351BA6003ECBD5 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		A65B1DB427351BC0003ECBD5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A65B1DB827351DC6003ECBD5 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A65B1DBE27352289003ECBD5 /* TopbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +94,14 @@
 		A65B1D9B27351254003ECBD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A65B1D8F27351248003ECBD5 /* ContentView.swift */,
+				A65B1DBA2735200F003ECBD5 /* LoginView */,
+				A65B1DB627351DB1003ECBD5 /* PointView */,
+				A65B1DAA27351B6B003ECBD5 /* HomeView */,
+				A65B1DAD27351B83003ECBD5 /* AccountView */,
+				A65B1DAC27351B7D003ECBD5 /* NotiView */,
+				A65B1DAB27351B74003ECBD5 /* SearchView */,
+				A65B1DA5273517F5003ECBD5 /* ContentView */,
+				A65B1DA027351384003ECBD5 /* SplashScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -80,6 +109,8 @@
 		A65B1D9C27351266003ECBD5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A65B1DA3273516F4003ECBD5 /* SystemViewModel.swift */,
+				A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -87,8 +118,74 @@
 		A65B1D9D2735126D003ECBD5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A65B1D9E27351296003ECBD5 /* DataModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A65B1DA027351384003ECBD5 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DA12735138E003ECBD5 /* SplashView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		A65B1DA5273517F5003ECBD5 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1D8F27351248003ECBD5 /* ContentView.swift */,
+				A65B1DA827351810003ECBD5 /* TabbarView.swift */,
+				A65B1DBE27352289003ECBD5 /* TopbarView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		A65B1DAA27351B6B003ECBD5 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DB427351BC0003ECBD5 /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		A65B1DAB27351B74003ECBD5 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DAE27351B8E003ECBD5 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		A65B1DAC27351B7D003ECBD5 /* NotiView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DB027351B99003ECBD5 /* NotiView.swift */,
+			);
+			path = NotiView;
+			sourceTree = "<group>";
+		};
+		A65B1DAD27351B83003ECBD5 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DB227351BA6003ECBD5 /* AccountView.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
+		A65B1DB627351DB1003ECBD5 /* PointView */ = {
+			isa = PBXGroup;
+			children = (
+				A65B1DB827351DC6003ECBD5 /* PointView.swift */,
+			);
+			path = PointView;
+			sourceTree = "<group>";
+		};
+		A65B1DBA2735200F003ECBD5 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +258,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65B1DA927351810003ECBD5 /* TabbarView.swift in Sources */,
 				A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */,
+				A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */,
+				A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */,
+				A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */,
+				A65B1DAF27351B8E003ECBD5 /* SearchView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
+				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
+				A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */,
+				A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */,
+				A65B1DB327351BA6003ECBD5 /* AccountView.swift in Sources */,
+				A65B1DB127351B99003ECBD5 /* NotiView.swift in Sources */,
+				A65B1D9F27351296003ECBD5 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
