@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostDetailView: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var dataViewmodel : DataViewModel
     
     @State private var check : Bool = false
     @State private var done : Bool = false
@@ -111,7 +112,16 @@ struct PostDetailView: View {
             CustomNotiView(check: $check, title: "확인 부탁드립니다.",
                            content: "\(8143) 포인트가 차감되며 주문 실패시 고객님의 계정으로 반환합니다.",
                            cancleTitle: "취소", confirmTitle: "확인",
-                           cancelAction: {}, confirmAction: {done.toggle()})
+                           cancelAction: {}, confirmAction: {
+                dataViewmodel.joinPost(id: post.id, completion: { response in
+                    switch response {
+                    case .success(_) :
+                        done.toggle()
+                    case .failure(let error) :
+                        print("Join Error : \(error.localizedDescription)")
+                    }
+                })
+            })
             //마지막 참가자 확인 기능 넣을 것
         }
     }

@@ -12,6 +12,7 @@ struct SignInView: View {
     @EnvironmentObject var login : LoginViewModel
     @EnvironmentObject var dataViewmodel : DataViewModel
     @Environment(\.presentationMode) var presentationMode
+    @Binding var isOpen : Bool
     @State private var universities : [UniversityModel] = []
     @State private var id : Int?
     @State private var onLoad = false
@@ -63,6 +64,7 @@ struct SignInView: View {
                                     keyResult in
                                     switch keyResult {
                                     case .success(_) :
+                                        isOpen = false
                                         presentationMode.wrappedValue.dismiss()
                                     case .failure(let error) :
                                         print("KeyChain save error : \(error.localizedDescription)")
@@ -105,7 +107,7 @@ struct SignInView: View {
 
 struct SingInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(isOpen: .constant(true))
             .environmentObject(LoginViewModel())
             .environmentObject(DataViewModel())
     }

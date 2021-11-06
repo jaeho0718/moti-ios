@@ -12,7 +12,6 @@ import Alamofire
 class DataViewModel : ObservableObject {
     @Published var Posts : [Post] = []
     @Published var categories : [Category] = []
-    
     @Published var usageItems : [Usage] = [
         .init(id: 0, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
         ,.init(id: 1, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
@@ -20,7 +19,7 @@ class DataViewModel : ObservableObject {
         ,.init(id: 3, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
         ,.init(id: 4, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
     ]
-    
+    var university : [UniversityModel] = []
     
     /// 이름을 통해 음식점을 검색합니다.
     func searchRestaurant(text : String, completion : @escaping (Result<[Restaurant],Error>) -> Void){
@@ -57,6 +56,36 @@ class DataViewModel : ObservableObject {
     
     func loadPost() {
         
+    }
+    
+    ///Post에 Join합니다.
+    func joinPost(id : Int, completion : @escaping (Result<Bool,Error>) -> Void ) {
+        let url_str = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order/\(id)/join"
+        if let url = URL(string: url_str) {
+            KeyChainModel.shared.readValue(completion: { response in
+                switch response {
+                case .success(let token) :
+                    var request = URLRequest(url: url)
+                    request.httpMethod = "POST"
+                    request.addValue("Bearer \(token.accessToken)", forHTTPHeaderField: "Authorization")
+                    URLSession.shared.dataTask(with: request, completionHandler: {
+                        taskData,taskResponse,error in
+                        if let error = error {
+                            print("Join Error : \(error.localizedDescription)")
+                        }
+                        if let httpresponse = taskResponse as? HTTPURLResponse, 200 == httpresponse.statusCode {
+                            completion(.success(true))
+                        } else {
+                            completion(.failure(DataError.noData))
+                        }
+                    })
+                case .failure(let error) :
+                    completion(.failure(error))
+                }
+            })
+        } else {
+            completion(.failure(DataError.notValidateUrl))
+        }
     }
     
     ///이름을 이용하여 현재 진행중인 주문을 확인합니다.
@@ -102,6 +131,7 @@ class DataViewModel : ObservableObject {
                 case.success(let token) :
                     request.addValue("Bearer \(token.accessToken)",
                                      forHTTPHeaderField: "Authorization")
+                    print("Start to link categories")
                     URLSession.shared.dataTask(with: request, completionHandler: {
                         data,response,error in
                         if let error = error {
@@ -117,6 +147,8 @@ class DataViewModel : ObservableObject {
                             } catch let error {
                                 print("Category Decode error : \(error.localizedDescription)")
                             }
+                        } else {
+                            print("Not loaded")
                         }
                     })
                 case .failure(let error) :

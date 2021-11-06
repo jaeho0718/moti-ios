@@ -42,17 +42,19 @@ struct MoitView: View {
             }.frame(maxWidth:.infinity,alignment: .leading)
             
             TextField("음식점 검색",text: $searchText,onCommit: {
-                onLoad = true
-                dataViewmodel.searchRestaurant(text: searchText
-                    ,completion: { response in
-                    switch response {
-                    case .success(let result) :
-                        self.results = result
-                    case .failure(let error) :
-                        print("Search Error : \(error.localizedDescription)")
-                    }
-                    onLoad = false
-                })
+                if !searchText.isEmpty {
+                    onLoad = true
+                    dataViewmodel.searchRestaurant(text: searchText
+                        ,completion: { response in
+                        switch response {
+                        case .success(let result) :
+                            self.results = result
+                        case .failure(let error) :
+                            print("Search Error : \(error.localizedDescription)")
+                        }
+                        onLoad = false
+                    })
+                }
             })
             .textFieldStyle(BorderedTextFieldStyle())
             .padding(.top,22)

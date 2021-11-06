@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+@MainActor
 class LoginViewModel : ObservableObject{
     @Published var user : User?
     

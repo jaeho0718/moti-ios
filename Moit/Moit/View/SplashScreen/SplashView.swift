@@ -89,7 +89,7 @@ struct SplashView: View {
             }
         }
         .sheet(isPresented: $openSingin, content: {
-            SignInView()
+            SignInView(isOpen: $isOpen)
         })
         .toast(isPresenting: $onLoad, alert: {
             AlertToast(displayMode: .alert, type: .loading)
