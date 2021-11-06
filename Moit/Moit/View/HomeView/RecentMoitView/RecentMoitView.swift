@@ -59,7 +59,7 @@ struct RecentMoitView: View {
             Divider()
             
             ScrollView(.vertical,showsIndicators: false){
-                ForEach(dataViewmodel.Posts){ post in
+                ForEach(dataViewmodel.latestPost){ post in
                     PostLargeCellView(post: post)
                         .environment(\.postType, tabitem)
                         .padding(.top,dataViewmodel.Posts.first?.id == post.id ? 10 : 0)

@@ -34,6 +34,7 @@ class DataViewModel : ObservableObject {
                         switch responseData.result {
                         case .success(let data):
                             do{
+                                print(String(data: data, encoding: .utf8))
                                 let results = try JSONDecoder().decode([String:[Restaurant]].self
                                                                        , from: data)
                                 if let result = results["restaurants"] {
@@ -54,7 +55,7 @@ class DataViewModel : ObservableObject {
         })
     }
     
-    
+    /// 최근의 포스트를 불러옵니다.
     func loadLatestPost() {
         let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
         KeyChainModel.shared.readValue(completion: { response in
@@ -70,6 +71,7 @@ class DataViewModel : ObservableObject {
                                                                        , from: data)
                                 if let result = results["orders"] {
                                     self.latestPost = result
+                                    print("Latest : \(result)")
                                 }
                             } catch let error {
                                 print(error.localizedDescription)
@@ -82,6 +84,10 @@ class DataViewModel : ObservableObject {
                 print(error.localizedDescription)
             }
         })
+    }
+    
+    func loadCategoryPost(categoryId : Int, completion : @escaping (Result<[Post],Error>) -> Void) {
+        
     }
     
     ///Post에 Join합니다.
@@ -104,7 +110,7 @@ class DataViewModel : ObservableObject {
                         } else {
                             completion(.failure(DataError.noData))
                         }
-                    })
+                    }).resume()
                 case .failure(let error) :
                     completion(.failure(error))
                 }
@@ -170,6 +176,7 @@ class DataViewModel : ObservableObject {
                                 let result = try JSONDecoder().decode([String:[Category]].self, from: data)
                                 if let list = result["categories"] {
                                     self.categories = list
+                                    print("Categories : \(list)")
                                 }
                             } catch let error {
                                 print("Category Decode error : \(error.localizedDescription)")
@@ -177,7 +184,7 @@ class DataViewModel : ObservableObject {
                         } else {
                             print("Not loaded")
                         }
-                    })
+                    }).resume()
                 case .failure(let error) :
                     print("Load keychain error : \(error.localizedDescription)")
                 }

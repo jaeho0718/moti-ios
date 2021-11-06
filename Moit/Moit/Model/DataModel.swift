@@ -163,14 +163,19 @@ struct Participants : Identifiable,Codable{
 }
 
 struct Restaurant : Identifiable,Codable{
-    var id : Int
-    var category_id : Int
-    var categoryName : String
-    var menus : [MenuData]
-    var fees : [Fee]
-    var name : String
+    var id : Int//
+    var categoryId : Int//
+    var categoryName : String//
+    var menus : [MenuData]//
+    var fees : [Fee]//
+    var name : String//
+    var account : String
+    var imageKey : String
     var openAt : String
     var closeAt : String
+    
+    var createdAt : String
+    var updatedAt : String
     
     struct Fee : Codable {
         var id : Int

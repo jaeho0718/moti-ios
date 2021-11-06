@@ -15,7 +15,7 @@ struct HomeView: View {
         VStack(spacing:0){
             TopbarView()
             ScrollView(.vertical,showsIndicators: false){
-                SectionView(title: "최근", posts: $dataViewmodel.Posts){
+                SectionView(title: "최근", posts: $dataViewmodel.latestPost){
                     RecentMoitView()
                         .environment(\.postdetailType, .latest)
                         .environmentObject(dataViewmodel)
@@ -28,13 +28,14 @@ struct HomeView: View {
                 }
                 
                 FoodListView().environmentObject(dataViewmodel)
-                    .onAppear(perform: {
-                        dataViewmodel.loadCategories()
-                    })
             }
             .background(Color("GroupedBackgroundColor").ignoresSafeArea())
         }
         .navigationTitle("").navigationBarHidden(true)
+        .onAppear{
+            dataViewmodel.loadLatestPost()
+            dataViewmodel.loadCategories()
+        }
     }
 }
 
