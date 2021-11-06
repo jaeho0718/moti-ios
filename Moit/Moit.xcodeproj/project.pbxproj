@@ -123,6 +123,7 @@
 		A6D71CB3273689970004BBDD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSingInButtonView.swift; sourceTree = "<group>"; };
 		A6D71CBA2736B2A10004BBDD /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
+		A6D71CBC273717AF0004BBDD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +169,7 @@
 		A65B1D8C27351248003ECBD5 /* Moit */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71CBC273717AF0004BBDD /* README.md */,
 				A65B1DCB27357C22003ECBD5 /* Font */,
 				A65B1DC027356480003ECBD5 /* Info.plist */,
 				A65B1D8D27351248003ECBD5 /* MoitApp.swift */,

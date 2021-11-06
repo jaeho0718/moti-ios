@@ -100,7 +100,6 @@ struct SplashView: View {
                 onLoad = false
                 switch response {
                 case .success(_) :
-                    print("Exit!")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.isOpen = false
                     })

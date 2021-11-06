@@ -15,13 +15,13 @@ struct FoodCategoryMenuBarView: View {
     var body: some View {
         HStack(alignment:.bottom){
             Spacer()
-            ForEach(dataViewmodel.categories){ category in
-                Button(action:{ selectedCategory = category.name }){
+            ForEach(CategoryType.allCases){ category in
+                Button(action:{ selectedCategory = category }){
                     VStack(spacing : 5){
-                        Text(category.name.icon)
-                        Text(category.name.title).font(.custom("DoHyeon-Regular", size: 12))
+                        Text(category.icon)
+                        Text(category.title).font(.custom("DoHyeon-Regular", size: 12))
                     }.frame(minWidth:40)
-                        .foregroundColor( selectedCategory == category.name ?
+                        .foregroundColor( selectedCategory == category ?
                                           Color("AppAccentColor") : Color("SecondaryTextColor") )
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()

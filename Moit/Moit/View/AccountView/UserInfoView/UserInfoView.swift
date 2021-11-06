@@ -17,7 +17,9 @@ struct UserInfoView: View {
                 Text("내 정보").font(.custom("DoHyeon-Regular", size: 28))
                     .foregroundColor(.black)
                 Spacer()
-                MoitManerView(score: 4.0)
+                if let manner = user.manner {
+                    MoitManerView(score: manner)
+                }
             }.padding(.horizontal,15)
             .padding(.top,20)
             .padding(.bottom,5)

@@ -10,6 +10,7 @@ import Alamofire
 
 @MainActor
 class DataViewModel : ObservableObject {
+    @Published var latestPost : [Post] = []
     @Published var Posts : [Post] = []
     @Published var categories : [Category] = []
     @Published var usageItems : [Usage] = [
@@ -54,8 +55,33 @@ class DataViewModel : ObservableObject {
     }
     
     
-    func loadPost() {
-        
+    func loadLatestPost() {
+        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
+        KeyChainModel.shared.readValue(completion: { response in
+            switch response {
+            case .success(let token):
+                let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
+                AF.request(url, method: .get, parameters: ["sortBy":"latest"], headers: [authHeader])
+                    .responseData(completionHandler: { responseData in
+                        switch responseData.result {
+                        case .success(let data):
+                            do{
+                                let results = try JSONDecoder().decode([String:[Post]].self
+                                                                       , from: data)
+                                if let result = results["orders"] {
+                                    self.latestPost = result
+                                }
+                            } catch let error {
+                                print(error.localizedDescription)
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    })
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
     }
     
     ///Post에 Join합니다.
@@ -88,6 +114,8 @@ class DataViewModel : ObservableObject {
         }
     }
     
+    
+    
     ///이름을 이용하여 현재 진행중인 주문을 확인합니다.
     func searchPost(text : String, completion : @escaping (Result<[Post],Error>) -> Void){
         let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
@@ -95,7 +123,7 @@ class DataViewModel : ObservableObject {
             switch response {
             case .success(let token):
                 let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
-                AF.request(url, method: .get, parameters: ["sortBy":text], headers: [authHeader])
+                AF.request(url, method: .get, parameters: ["searchKey":text], headers: [authHeader])
                     .responseData(completionHandler: { responseData in
                         switch responseData.result {
                         case .success(let data):
@@ -131,7 +159,6 @@ class DataViewModel : ObservableObject {
                 case.success(let token) :
                     request.addValue("Bearer \(token.accessToken)",
                                      forHTTPHeaderField: "Authorization")
-                    print("Start to link categories")
                     URLSession.shared.dataTask(with: request, completionHandler: {
                         data,response,error in
                         if let error = error {

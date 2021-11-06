@@ -183,14 +183,14 @@ struct Restaurant : Identifiable,Codable{
 
 struct User : Identifiable,Codable{
     var id : Int
-    var region_id : Int
-    var university_id : Int
+    var university_id : Int?
     var email : String
     var phoneNumber : String
     var name : String
     var point : Int
     var createdAt : String
     var updatedAt : String
+    var manner : Double?
 }
 
 struct Location : Identifiable,Codable{
