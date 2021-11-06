@@ -87,6 +87,19 @@ enum CategoryType : String,Identifiable,CaseIterable {
     }
 }
 
+enum OrderType : Identifiable {
+    case together,share
+    
+    var id : Int {
+        switch self {
+        case .together:
+            return 0
+        case .share:
+            return 1
+        }
+    }
+}
+
 struct Category : Identifiable,Codable{
     var id : Int
     var title : String
@@ -98,6 +111,7 @@ struct Menu : Identifiable,Codable{
     var title : String
     var price : Int
     var image_id : Int
+    var isSelected : Bool //Decoder 커스텀하기
 }
 
 struct Post : Identifiable,Codable{
@@ -127,6 +141,7 @@ struct Restaurant : Identifiable,Codable{
     var location_id : Int
     var delivery_fee : Int
     var account : String
+    var imageURL : String
     //var created_at :
     //var updated_at
 }

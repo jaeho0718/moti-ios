@@ -15,27 +15,27 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack(spacing:0){
-                Group{
-                    switch system.tabitem{
-                    case .home :
-                        HomeView()
-                            .environmentObject(dataViewmodel)
-                    case .search :
-                        SearchView()
-                    case .moit :
-                        MoitView()
-                    case .noti :
-                        NotiView()
-                    case .account :
-                        AccountView()
-                            .environmentObject(dataViewmodel)
-                            .environmentObject(loginViewmodel)
-                    }
+                ZStack{
+                    HomeView()
+                        .environmentObject(dataViewmodel)
+                        .opacity(system.tabitem == SystemViewModel.TabItems.home ? 1 : 0)
+                    SearchView()
+                        .environmentObject(dataViewmodel)
+                        .opacity(system.tabitem == SystemViewModel.TabItems.search ? 1 : 0)
+                    MoitView()
+                        .environmentObject(dataViewmodel)
+                        .opacity(system.tabitem == SystemViewModel.TabItems.moit ? 1 : 0)
+                    NotiView()
+                        .opacity(system.tabitem == SystemViewModel.TabItems.noti ? 1 : 0)
+                    AccountView()
+                        .environmentObject(dataViewmodel)
+                        .environmentObject(loginViewmodel)
+                        .opacity(system.tabitem == SystemViewModel.TabItems.account ? 1 : 0)
                 }.frame(maxWidth:.infinity,maxHeight: .infinity)
                 TabbarView().environmentObject(system)
             }
         }.navigationViewStyle(.stack)
-        //.overlay(SplashView())
+        .overlay(SplashView())
     }
 }
 
