@@ -34,6 +34,10 @@ struct SectionView<Destination : View> : View {
             }
             ScrollViewReader{ proxy in
                 ScrollView(.horizontal, showsIndicators: false){
+                    if posts.isEmpty {
+                        Text("주문이 없어요.").font(.custom("DoHyeon-Regular", size: 15))
+                            .padding()
+                    }
                     LazyHStack{
                         ForEach(posts){ post in
                             PostMiniView(post: post).id(post.id)

@@ -20,6 +20,8 @@ class DataViewModel : ObservableObject {
         ,.init(id: 3, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
         ,.init(id: 4, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
     ]
+    @Published var categoryPosts : [Int : [Post]] = [:]
+    
     var university : [UniversityModel] = []
     
     /// 이름을 통해 음식점을 검색합니다.
@@ -86,8 +88,33 @@ class DataViewModel : ObservableObject {
         })
     }
     
-    func loadCategoryPost(categoryId : Int, completion : @escaping (Result<[Post],Error>) -> Void) {
-        
+    func loadCategoryPost(categoryId : Int) {
+        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
+        KeyChainModel.shared.readValue(completion: { response in
+            switch response {
+            case .success(let token):
+                let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
+                AF.request(url, method: .get, parameters: ["categoryId":categoryId], headers: [authHeader])
+                    .responseData(completionHandler: { responseData in
+                        switch responseData.result {
+                        case .success(let data):
+                            do{
+                                let results = try JSONDecoder().decode([String:[Post]].self
+                                                                       , from: data)
+                                if let result = results["orders"] {
+                                    self.categoryPosts[categoryId] = result
+                                }
+                            } catch let error {
+                                print(error.localizedDescription)
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    })
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
     }
     
     ///Post에 Join합니다.

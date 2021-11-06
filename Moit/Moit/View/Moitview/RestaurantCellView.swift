@@ -21,8 +21,7 @@ struct RestaurantCellView: View {
                 .environmentObject(order)
         }){
             HStack{
-                /*
-                 if let url = URL(string: restaurent.imageURL) {
+                if let url = URL(string: restaurent.imageKey) {
                      AsyncImageView(url: url, placeholder: {
                          RoundedRectangle(cornerRadius: 6)
                      },image: { uiimage in
@@ -32,16 +31,16 @@ struct RestaurantCellView: View {
                  }else{
                      Circle().frame(width:36,height: 36)
                  }
-                 */
+                 
                 Text(restaurent.name)
                     .font(.custom("DoHyeon-Regular", size: 16))
                     .foregroundColor(.black)
                 Spacer(minLength: 5)
-                /*
-                 Text("배달팁  \(restaurent.delivery_fee)")
-                     .font(.custom("DoHyeon-Regular", size: 16))
-                     .foregroundColor(Color("SecondaryTextColor"))
-                 */
+                if let fee = restaurent.fees.first?.delivertFee {
+                    Text("배달팁  \(fee)")
+                        .font(.custom("DoHyeon-Regular", size: 16))
+                        .foregroundColor(Color("SecondaryTextColor"))
+                }
             }.frame(height:48)
         }
     }

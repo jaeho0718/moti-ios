@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PointView: View {
+    @EnvironmentObject var login : LoginViewModel
+    
     var body: some View {
         VStack(spacing:0){
             HStack{
@@ -18,7 +20,7 @@ struct PointView: View {
             .padding(.vertical,15)
             
             VStack(alignment:.leading, spacing:0){
-                Text("15.432P").font(.custom("DoHyeon-Regular", size: 30))
+                Text("\(login.user?.point ?? 0)P").font(.custom("DoHyeon-Regular", size: 30))
                     .padding(.leading,16).padding(.vertical,12)
                     .foregroundColor(.white)
                     .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .leading)

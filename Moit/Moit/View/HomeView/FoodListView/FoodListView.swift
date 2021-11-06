@@ -27,9 +27,11 @@ struct FoodListView: View {
             
             LazyVStack(spacing:10){
                 //filter 추가하기
-                ForEach(dataViewmodel.Posts.prefix(5)){ post in
-                    PostMidiumView(post: post)
-                }.padding(.horizontal,18)
+                if let categoryPosts = dataViewmodel.categoryPosts[selectedCategory.id] {
+                    ForEach(categoryPosts){ post in
+                        PostMidiumView(post: post)
+                    }.padding(.horizontal,18)
+                }
             }.padding(.top,15)
             .padding(.bottom,46)
         }.background(Color.white.ignoresSafeArea())

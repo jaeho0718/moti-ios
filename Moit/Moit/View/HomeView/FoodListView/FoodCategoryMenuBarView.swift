@@ -16,7 +16,10 @@ struct FoodCategoryMenuBarView: View {
         HStack(alignment:.bottom){
             Spacer()
             ForEach(CategoryType.allCases){ category in
-                Button(action:{ selectedCategory = category }){
+                Button(action:{
+                    selectedCategory = category
+                    dataViewmodel.loadCategoryPost(categoryId: category.id)
+                }){
                     VStack(spacing : 5){
                         Text(category.icon)
                         Text(category.title).font(.custom("DoHyeon-Regular", size: 12))
