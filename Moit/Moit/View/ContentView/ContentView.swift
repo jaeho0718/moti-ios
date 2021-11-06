@@ -35,7 +35,8 @@ struct ContentView: View {
                 TabbarView().environmentObject(system)
             }.ignoresSafeArea(.keyboard)
         }.navigationViewStyle(.stack)
-        .overlay(SplashView().environmentObject(loginViewmodel))
+            .overlay(SplashView().environmentObject(loginViewmodel)
+                        .environmentObject(dataViewmodel))
         .preferredColorScheme(.light)
     }
 }

@@ -55,21 +55,23 @@ struct SectionView<Destination : View> : View {
     }
 }
 
-struct SectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            SectionView(title: "Test", posts: .constant([
-                .init(id: 0, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
-                    ,max_participants: 10, price: 0, delivery_fee: 0),
-                .init(id: 1, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
-                    ,max_participants: 10, price: 0, delivery_fee: 0),
-                .init(id: 2, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
-                    ,max_participants: 10, price: 0, delivery_fee: 0),
-                .init(id: 3, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
-                    ,max_participants: 10, price: 0, delivery_fee: 0)
-            ])){
-                Text("test")
-            }
-        }.navigationViewStyle(.stack)
-    }
-}
+/*
+ struct SectionView_Previews: PreviewProvider {
+     static var previews: some View {
+         NavigationView{
+             SectionView(title: "Test", posts: .constant([
+                 .init(id: 0, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
+                     ,max_participants: 10, price: 0, delivery_fee: 0),
+                 .init(id: 1, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
+                     ,max_participants: 10, price: 0, delivery_fee: 0),
+                 .init(id: 2, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
+                     ,max_participants: 10, price: 0, delivery_fee: 0),
+                 .init(id: 3, writer_id: 0, title: "교촌치킨", content: "", location_id: 0
+                     ,max_participants: 10, price: 0, delivery_fee: 0)
+             ])){
+                 Text("test")
+             }
+         }.navigationViewStyle(.stack)
+     }
+ }
+ */

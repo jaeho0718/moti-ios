@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TopbarView: View {
+    @EnvironmentObject var login : LoginViewModel
+    @EnvironmentObject var dataViewmodel : DataViewModel
+    
     var body: some View {
         HStack{
             VStack(alignment:.leading){
@@ -16,6 +19,7 @@ struct TopbarView: View {
                 Text("서울캠퍼스")
                     .font(.custom("DoHyeon-Regular", size: 12))
             }
+            
             Spacer()
             Button(action:{}){
                 Image(systemName: "gearshape.fill").font(.system(size: 20))
@@ -31,5 +35,7 @@ struct TopbarView: View {
 struct TopbarView_Previews: PreviewProvider {
     static var previews: some View {
         TopbarView()
+            .environmentObject(LoginViewModel())
+            .environmentObject(DataViewModel())
     }
 }

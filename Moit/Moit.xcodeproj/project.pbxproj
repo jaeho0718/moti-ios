@@ -61,7 +61,6 @@
 		A6D71CB227367F540004BBDD /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB127367F540004BBDD /* ResponseModel.swift */; };
 		A6D71CB4273689970004BBDD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB3273689970004BBDD /* LoginView.swift */; };
 		A6D71CB627369F870004BBDD /* GoogleSingInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */; };
-		A6D71CB82736A2560004BBDD /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6D71CB72736A2560004BBDD /* credentials.plist */; };
 		A6D71CBB2736B2A10004BBDD /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CBA2736B2A10004BBDD /* SingInView.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +122,6 @@
 		A6D71CB127367F540004BBDD /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		A6D71CB3273689970004BBDD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSingInButtonView.swift; sourceTree = "<group>"; };
-		A6D71CB72736A2560004BBDD /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../Assets/credentials.plist; sourceTree = "<group>"; };
 		A6D71CBA2736B2A10004BBDD /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,7 +170,6 @@
 			children = (
 				A65B1DCB27357C22003ECBD5 /* Font */,
 				A65B1DC027356480003ECBD5 /* Info.plist */,
-				A6D71CB72736A2560004BBDD /* credentials.plist */,
 				A65B1D8D27351248003ECBD5 /* MoitApp.swift */,
 				A65B1D9D2735126D003ECBD5 /* Model */,
 				A65B1D9C27351266003ECBD5 /* ViewModel */,
@@ -483,7 +480,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65B1D9527351249003ECBD5 /* Preview Assets.xcassets in Resources */,
-				A6D71CB82736A2560004BBDD /* credentials.plist in Resources */,
 				A65B1DCD27357C2D003ECBD5 /* DoHyeon-Regular.ttf in Resources */,
 				A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */,
 			);

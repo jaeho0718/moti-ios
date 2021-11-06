@@ -32,9 +32,10 @@ struct UserInfoView: View {
     }
 }
 
-struct UserInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserInfoView(user: .init(id: 0, region_id: 0, university_id: 0, email: "", phoneNumber: "", name: "", point: 0, created_at: "", updated_at: ""))
-    }
-}
-
+/*
+ struct UserInfoView_Previews: PreviewProvider {
+     static var previews: some View {
+         UserInfoView(user: .init(id: 0, region_id: 0, university_id: 0, email: "", phoneNumber: "", name: "", point: 0, created_at: "", updated_at: ""))
+     }
+ }
+ */

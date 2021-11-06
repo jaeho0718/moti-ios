@@ -112,7 +112,7 @@ struct MenuCell : View {
     var body: some View {
         Button(action:{ menu.isSelected.toggle() }){
             HStack{
-                Text(menu.title).font(.custom("DoHyeon-Regular", size: 14))
+                Text(menu.name).font(.custom("DoHyeon-Regular", size: 14))
                 Spacer()
                 Text("\(menu.price)원").font(.custom("DoHyeon-Regular", size: 14))
             }

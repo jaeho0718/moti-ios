@@ -54,7 +54,7 @@ struct PaymentView: View {
                     }
                     ForEach(order.menus.filter({$0.isSelected})){ menu in
                         HStack{
-                            Text(menu.title).font(.custom("DoHyeon-Regular", size: 14))
+                            Text(menu.name).font(.custom("DoHyeon-Regular", size: 14))
                             Spacer()
                             Text("\(menu.price)원").font(.custom("DoHyeon-Regular", size: 14))
                         }.frame(height:36)

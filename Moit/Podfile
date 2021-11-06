@@ -8,5 +8,4 @@ target 'Moit' do
   # Pods for Moit
   pod 'AlertToast'
   pod 'Alamofire', '~> 5.4'
-  pod 'GoogleSignIn'
 end

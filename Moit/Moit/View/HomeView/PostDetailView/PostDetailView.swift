@@ -32,13 +32,18 @@ struct PostDetailView: View {
             }.padding(.vertical,5)
             .padding(.horizontal)
             ScrollView(.vertical,showsIndicators: false){
-                AsyncImageView(url: loadRestaurantImage(), placeholder: {
-                    Rectangle()
-                },image: { uiimage in
-                    Image(uiImage: uiimage).resizable()
-                }).aspectRatio(3/2,contentMode: .fill)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(.top,10)
+                Group{
+                    if let url = URL(string: post.thumnailImageKey) {
+                        AsyncImageView(url: url, placeholder: {
+                            Rectangle()
+                        },image: { uiimage in
+                            Image(uiImage: uiimage).resizable()
+                        }).aspectRatio(3/2,contentMode: .fill)
+                    } else {
+                        Rectangle()
+                    }
+                }.clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding(.top,10)
                 
                 VStack(alignment:.leading,spacing:3){
                     Text("주문자 : 주문자 별명")
@@ -52,15 +57,17 @@ struct PostDetailView: View {
                 
                 Divider()
                 
-                HStack(alignment:.bottom){
-                    Text(post.title)
-                        .font(.custom("DoHyeon-Regular", size: 24))
-                        .foregroundColor(.black)
-                    Spacer()
-                    Text("배달팁 : \(post.delivery_fee)")
-                        .font(.custom("DoHyeon-Regular", size: 14))
-                        .foregroundColor(Color("SecondaryTextColor"))
-                }
+                /*
+                 HStack(alignment:.bottom){
+                     Text(post.title)
+                         .font(.custom("DoHyeon-Regular", size: 24))
+                         .foregroundColor(.black)
+                     Spacer()
+                     Text("배달팁 : \(post.delivery_fee)")
+                         .font(.custom("DoHyeon-Regular", size: 14))
+                         .foregroundColor(Color("SecondaryTextColor"))
+                 }//가게 정보 이용해서 수정하기
+                 */
                 
                 DetailLabel(icon: "arrowtriangle.right.fill", title: "주문 메뉴 : 치즈 퐁듀 파이어미트"){}
                 .padding(.top,18)
@@ -68,19 +75,19 @@ struct PostDetailView: View {
                 DetailLabel(icon: "location.north.fill", title: "배달 도착지 : 주문자 주소"){}
                 .padding(.top,18)
                 
-                DetailLabel(icon: "dollarsign.circle.fill", title: "개인 지불 포인트 : \(8143)원"){}
+                DetailLabel(icon: "dollarsign.circle.fill", title: "개인 지불 포인트 : \(post.totalPrice/post.maxParticipants)원"){}
                 .padding(.top,18)
                 
                 DetailLabel(icon: "bag.fill", title: "소분 용기를 각자 준비해주세요!"){}
                 .padding(.top,18)
                 
-                DetailLabel(icon: "person.fill", title: "참여 현황 : \(2)/\(3)"){
-                    ProgressView(value: 0.7)
+                DetailLabel(icon: "person.fill", title: "참여 현황 : \(post.nowParticipants)/\(post.maxParticipants)"){
+                    ProgressView(value: Double(post.nowParticipants)/Double(post.maxParticipants))
                 }
                 .padding(.top,18)
                 
                 DetailLabel(icon: "bubble.right.fill", title: "요청사항"){
-                    Text("기숙사 309관 2층 로비로 와주세요.")
+                    Text(post.message)
                         .font(.custom("DoHyeon-Regular", size: 14))
                         .foregroundColor(Color("SecondaryTextColor"))
                 }
@@ -108,17 +115,15 @@ struct PostDetailView: View {
             //마지막 참가자 확인 기능 넣을 것
         }
     }
-    
-    //수정하기
-    private func loadRestaurantImage() -> URL {
-        return URL(string: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg")!
-    }
 }
 
-struct PostDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostDetailView(post: .init(id: 1, writer_id: 1, title: "교촌치킨"
-                                   ,content: "", location_id: 10
-                                   ,max_participants: 10, price: 10, delivery_fee: 10))
-    }
-}
+/*
+ struct PostDetailView_Previews: PreviewProvider {
+     static var previews: some View {
+         PostDetailView(post: .init(id: 1, writer_id: 1, title: "교촌치킨"
+                                    ,content: "", location_id: 10
+                                    ,max_participants: 10, price: 10, delivery_fee: 10))
+     }
+ }
+
+ */

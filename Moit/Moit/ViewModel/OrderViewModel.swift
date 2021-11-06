@@ -27,22 +27,26 @@ class OrderViewModel : ObservableObject {
     func postOrder(completion : @escaping (Result<Bool,Error>) -> Void){
         let url = URL(string: "")!
         var dictionaryMenu : [[String:Int]] = []
-        for menu in menus {
-            dictionaryMenu.append([menu.id:1])
+        for menu in menus.filter({$0.isSelected}) {
+            dictionaryMenu.append(["menuId":menu.id,"count" : 1])
         }
-        var body = OrderModel(restaurantId: 0, menus: dictionaryMenu, message: request, maxParticipants: count)
+        let body = OrderModel(restaurantId: 0, menus: dictionaryMenu, message: request, maxParticipants: count)
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
                 var request = URLRequest(url: url)
                 request.addValue( "Authorization", forHTTPHeaderField: "Bearer \(token.accessToken)")
+                request.httpMethod = "POST"
                 do {
                     let body_data = try JSONEncoder().encode(body)
                     request.httpBody = body_data
                     URLSession.shared.dataTask(with: request, completionHandler: {
                         taskData,taskResponse,error in
-                        if let taskResponse = taskResponse {
-                            
+                        if let taskResponse = taskResponse as? HTTPURLResponse,
+                           201...399 ~= taskResponse.statusCode {
+                            completion(.success(true))
+                        } else {
+                            completion(.failure(DataError.noData))
                         }
                     })
                 } catch let error {

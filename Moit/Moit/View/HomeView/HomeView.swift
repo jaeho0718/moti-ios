@@ -28,6 +28,9 @@ struct HomeView: View {
                 }
                 
                 FoodListView().environmentObject(dataViewmodel)
+                    .onAppear(perform: {
+                        dataViewmodel.loadCategories()
+                    })
             }
             .background(Color("GroupedBackgroundColor").ignoresSafeArea())
         }

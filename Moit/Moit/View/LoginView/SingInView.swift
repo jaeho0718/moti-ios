@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct SignInView: View {
     @EnvironmentObject var login : LoginViewModel
+    @EnvironmentObject var dataViewmodel : DataViewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var universities : [UniversityModel] = []
+    @State private var id : Int?
+    @State private var onLoad = false
     @State private var email : String = ""
     @State private var name : String = ""
     @State private var phoneNumber : String = ""
@@ -25,14 +30,22 @@ struct SignInView: View {
                 }
                 .padding(.top,20)
                 .padding(.bottom,50)
-                TextField("이메일 주소",text: $email).keyboardType(.emailAddress)
-                    .textFieldStyle(BorderedTextFieldStyle())
                 TextField("이름",text: $name).keyboardType(.namePhonePad)
+                    .textFieldStyle(BorderedTextFieldStyle())
+                TextField("이메일 주소",text: $email).keyboardType(.emailAddress)
                     .textFieldStyle(BorderedTextFieldStyle())
                 TextField("전화번호",text: $phoneNumber).keyboardType(.namePhonePad)
                     .textFieldStyle(BorderedTextFieldStyle())
                 SecureField("비밀번호", text: $password)
                     .textFieldStyle(BorderedTextFieldStyle())
+                Picker("대학교 선택", selection: $id, content: {
+                    Text("대학교를 선택해주세요.")
+                    ForEach(universities,id : \.id){ element in
+                        Text(element.name).tag(element.id)
+                    }
+                }).pickerStyle(.menu)
+                .frame(maxWidth:.infinity,alignment: .leading)
+                .padding(.horizontal,12)
                 Spacer()
                 
             }
@@ -71,6 +84,22 @@ struct SignInView: View {
             }.background(Color("AppAccentColor").ignoresSafeArea())
             .disabled(password.isEmpty || email.isEmpty || name.isEmpty || phoneNumber.isEmpty)
         }
+        .toast(isPresenting: $onLoad, alert: {
+            AlertToast(displayMode: .alert, type: .loading)
+        })
+        .onAppear{
+            onLoad = true
+            dataViewmodel.loadUniversityList(completion: {
+                response in
+                onLoad = false
+                switch response {
+                case .success(let value) :
+                    universities = value
+                case .failure(let error) :
+                    print(error.localizedDescription)
+                }
+            })
+        }
     }
 }
 
@@ -78,5 +107,6 @@ struct SingInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
             .environmentObject(LoginViewModel())
+            .environmentObject(DataViewModel())
     }
 }

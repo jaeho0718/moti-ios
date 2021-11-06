@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 
-enum CategoryType : String,Identifiable,CaseIterable {
+enum CategoryType : String,Identifiable,CaseIterable,Codable{
     case pizza,caffe,korean,hamburger,chinese,western,chicken
     
     var id : Int {
@@ -32,19 +32,19 @@ enum CategoryType : String,Identifiable,CaseIterable {
     var rawValue: String {
         switch self {
         case .pizza:
-            return "pizza"
+            return "피자"
         case .caffe:
-            return "caffe"
+            return "카페/디저트"
         case .korean:
-            return "korean"
+            return "한식"
         case .hamburger:
-            return "hamburger"
+            return "햄버거"
         case .chinese:
-            return "chinese"
+            return "중식"
         case .western:
-            return "western"
+            return "양식"
         case .chicken:
-            return "chicken"
+            return "치킨"
         }
     }
     
@@ -109,31 +109,51 @@ enum OrderType : String,Identifiable,CaseIterable {
     }
 }
 
-struct Category : Identifiable,Codable{
+struct MenuData : Identifiable,Codable{
+    
+    init(from decoder: Decoder) throws {
+        let key = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try key.decode(Int.self, forKey: .id)
+        self.restaurantId = try key.decode(Int.self, forKey: .restaurantId)
+        self.name = try key.decode(String.self, forKey: .name)
+        self.price = try key.decode(Int.self, forKey: .price)
+        self.imageKey = try key.decode(String.self, forKey: .imageKey)
+        self.isSelected = false
+    }
+    
+    init(id : Int, restaurantId : Int, name : String, price : Int, imageKey : String) {
+        self.id = id
+        self.restaurantId = restaurantId
+        self.name = name
+        self.price = price
+        self.imageKey = imageKey
+        self.isSelected = false
+    }
+    
     var id : Int
-    var title : String
+    var restaurantId : Int
+    var name : String
+    var price : Int
+    var imageKey : String
+    var isSelected : Bool //Decoder 커스텀하기
+    
+    enum CodingKeys : CodingKey {
+        case id,restaurantId,name,price,imageKey
+    }
 }
 
-struct MenuData : Identifiable,Codable{
-    var id : String
-    var restaurant_id : Int
-    var title : String
-    var price : Int
-    var image_id : Int
-    var isSelected : Bool //Decoder 커스텀하기
-}
 
 struct Post : Identifiable,Codable{
     var id : Int
-    var writer_id : Int
-    var title : String
-    var content : String
-    var location_id : Int
-    var max_participants : Int
-    var price : Int
-    var delivery_fee : Int
-    //var created_at
-    //var updated_at
+    var restaurantId : Int
+    var thumnailImageKey : String
+    var creatorId : Int
+    var message : String
+    var maxParticipants : Int
+    var nowParticipants : Int
+    var totalPrice : Int
+    var createdAt : String
+    var updatedAt : String
 }
 
 struct Participants : Identifiable,Codable{
@@ -146,11 +166,19 @@ struct Restaurant : Identifiable,Codable{
     var id : Int
     var category_id : Int
     var categoryName : String
-    var menus : [String]
-    var fees : [String]
+    var menus : [MenuData]
+    var fees : [Fee]
     var name : String
     var openAt : String
     var closeAt : String
+    
+    struct Fee : Codable {
+        var id : Int
+        var restaurantId : Int
+        var priceStart : Int
+        var priceEnd : Int
+        var delivertFee : Int
+    }
 }
 
 struct User : Identifiable,Codable{
@@ -161,8 +189,8 @@ struct User : Identifiable,Codable{
     var phoneNumber : String
     var name : String
     var point : Int
-    var created_at : String
-    var updated_at : String
+    var createdAt : String
+    var updatedAt : String
 }
 
 struct Location : Identifiable,Codable{
@@ -182,6 +210,7 @@ struct KeychainData : Codable {
     var accessToken : String
 }
 
+///주문전송용 구조체
 struct OrderModel : Codable {
     var restaurantId : Int
     var menus : [[String : Int]]
@@ -189,7 +218,12 @@ struct OrderModel : Codable {
     var maxParticipants : Int
 }
 
-struct UniversityModel : Codable {
+struct UniversityModel : Codable,Identifiable{
     var id : Int
     var name : String
+}
+
+struct Category : Codable,Identifiable{
+    var name : CategoryType
+    var id : Int
 }

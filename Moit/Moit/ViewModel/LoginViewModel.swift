@@ -11,27 +11,22 @@ import Alamofire
 class LoginViewModel : ObservableObject{
     @Published var user : User?
     
-    func signInWithIdToken(idToken : String) {
-        let url = "https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&access_type=offline"
-        //let paramter : [String:String] = ["redirect_uri":""]
-        //AF.request(url, method: <#T##HTTPMethod#>, parameters: <#T##Encodable?#>, encoder: <#T##ParameterEncoder#>, headers: <#T##HTTPHeaders?#>, interceptor: <#T##RequestInterceptor?#>, requestModifier: <#T##Session.RequestModifier?##Session.RequestModifier?##(inout URLRequest) throws -> Void#>)
-    }
-    
     ///사용자 정보를 불러옵니다. 사용자 정보가 불러와지면, user변수에 저장됩니다.
     func getUserData(completion : @escaping (Result<User,Error>) -> Void){
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
-                if let url = URL(string: "" ) {
+                if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/user/me" ) {
                     var request = URLRequest(url: url)
                     request.httpMethod = "GET"
                     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                    request.addValue("Authorization",
-                                     forHTTPHeaderField: "Bearer \(token.accessToken)")
+                    request.addValue("Bearer \(token.accessToken)",
+                                     forHTTPHeaderField: "Authorization")
                     URLSession.shared.dataTask(with: request, completionHandler: {
                         taskData,taskResponse,error in
                         if let taskData = taskData {
                             do {
+                                print(String(data: taskData, encoding: .utf8))
                                 let result = try JSONDecoder().decode(User.self, from: taskData)
                                 self.user = result
                                 completion(.success(result))
@@ -42,6 +37,8 @@ class LoginViewModel : ObservableObject{
                             completion(.failure(DataError.loginError))
                         }
                     }).resume()
+                } else {
+                    completion(.failure(DataError.notValidateUrl))
                 }
             case .failure(let error):
                 completion(.failure(error))
@@ -62,7 +59,6 @@ class LoginViewModel : ObservableObject{
                 request.httpMethod = "POST"
                 request.httpBody = encodedBodyData
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.cachePolicy = .returnCacheDataElseLoad
                 URLSession.shared.dataTask(with: request, completionHandler: {
                     data,response,error in
                     if let error = error {

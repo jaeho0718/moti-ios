@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct FoodCategoryMenuBarView: View {
+    @EnvironmentObject var dataViewmodel : DataViewModel
+    
     @Binding var selectedCategory : CategoryType
     
     var body: some View {
         HStack(alignment:.bottom){
             Spacer()
-            ForEach(CategoryType.allCases){ category in
-                Button(action:{ selectedCategory = category }){
+            ForEach(dataViewmodel.categories){ category in
+                Button(action:{ selectedCategory = category.name }){
                     VStack(spacing : 5){
-                        Text(category.icon)
-                        Text(category.title).font(.custom("DoHyeon-Regular", size: 12))
+                        Text(category.name.icon)
+                        Text(category.name.title).font(.custom("DoHyeon-Regular", size: 12))
                     }.frame(minWidth:40)
-                        .foregroundColor( selectedCategory == category ?
+                        .foregroundColor( selectedCategory == category.name ?
                                           Color("AppAccentColor") : Color("SecondaryTextColor") )
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
@@ -31,5 +33,6 @@ struct FoodCategoryMenuBarView: View {
 struct FoodCategoryMenuBarView_Previews: PreviewProvider {
     static var previews: some View {
         FoodCategoryMenuBarView(selectedCategory : .constant(.pizza))
+            .environmentObject(DataViewModel())
     }
 }

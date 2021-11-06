@@ -53,11 +53,19 @@ struct SplashView: View {
                                         switch response {
                                         case .success(let token) :
                                             print("Login Success : \(token.accessToken)")
-                                            KeyChainModel.shared.updateValue(data: token, completion: {
+                                            KeyChainModel.shared.createValue(data: token, completion: {
                                                 keyResponse in
                                                 switch keyResponse {
                                                 case .success(_) :
-                                                    isOpen = false
+                                                    login.getUserData(completion: { response in
+                                                        isOpen = false
+                                                        switch response {
+                                                        case .success(_) :
+                                                                isOpen = false
+                                                        case .failure(let error) :
+                                                            print("AutoLogin error : \(error.localizedDescription)")
+                                                        }
+                                                    })
                                                 case .failure(let error):
                                                     print("Key chain error : \(error.localizedDescription)")
                                                 }
@@ -87,9 +95,12 @@ struct SplashView: View {
             AlertToast(displayMode: .alert, type: .loading)
         })
         .onAppear{
+            onLoad = true
             login.getUserData(completion: { response in
+                onLoad = false
                 switch response {
                 case .success(_) :
+                    print("Exit!")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.isOpen = false
                     })

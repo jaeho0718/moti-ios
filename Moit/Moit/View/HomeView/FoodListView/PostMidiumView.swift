@@ -16,23 +16,31 @@ struct PostMidiumView: View {
             PostDetailView(post: post)
         }){
             HStack(alignment:.top , spacing:8){
-                AsyncImageView(url: loadRestaurantImage(), placeholder: {
-                    Rectangle()
-                },image: { uiimage in
-                    Image(uiImage: uiimage).resizable()
-                }).aspectRatio(contentMode: .fill)
-                .frame(width: 84, height: 87, alignment: .center).clipped()
+                Group{
+                    if let url = URL(string: post.thumnailImageKey) {
+                        AsyncImageView(url: url, placeholder: {
+                            Rectangle()
+                        },image: { uiimage in
+                            Image(uiImage: uiimage).resizable()
+                        }).aspectRatio(contentMode: .fill)
+                    } else {
+                        Rectangle()
+                    }
+                }.frame(width: 84, height: 87, alignment: .center).clipped()
                 
                 VStack(alignment:.leading,spacing : 0){
-                    Text(post.title).font(.custom("DoHyeon-Regular", size: 16))
-                        .foregroundColor(.black)
-                    Text(post.content).font(.custom("DoHyeon-Regular", size: 12))
-                        .foregroundColor(Color("SecondaryTextColor")).padding(.top,3)
+                    /*
+                     Text(post.title).font(.custom("DoHyeon-Regular", size: 16))
+                         .foregroundColor(.black)
+                     Text(post.content).font(.custom("DoHyeon-Regular", size: 12))
+                         .foregroundColor(Color("SecondaryTextColor")).padding(.top,3)
+                     가게 이름으로 바꾸기
+                     */
                     Spacer()
-                    Text("\(2)/\(post.max_participants)명")
+                    Text("\(post.nowParticipants)/\(post.maxParticipants)명")
                         .font(.custom("DoHyeon-Regular", size: 12))
                             .foregroundColor(Color("SecondaryTextColor")).padding(.top,7)
-                    Text("필요금액 : \(post.delivery_fee)원")
+                    Text("필요금액 : \(post.totalPrice)원")
                         .font(.custom("DoHyeon-Regular", size: 12))
                         .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
                         .padding(.bottom,6)
@@ -47,15 +55,14 @@ struct PostMidiumView: View {
         .shadow(radius: 1,x: 1,y: 1)
     }
     
-    private func loadRestaurantImage() -> URL {
-        return URL(string: "https://cdn.dominos.co.kr/admin/upload/goods/20210603_0a73o5Q1.jpg?RS=350x350&SP=1")!
-    }
 }
 
-struct PostMidiumView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostMidiumView(post: .init(id: 1, writer_id: 1, title: "도미노피자 여의도점"
-                                   ,content: "치즈 퐁듀", location_id: 10, max_participants: 3
-                                   , price: 10, delivery_fee: 8143))
-    }
-}
+/*
+ struct PostMidiumView_Previews: PreviewProvider {
+     static var previews: some View {
+         PostMidiumView(post: .init(id: 1, writer_id: 1, title: "도미노피자 여의도점"
+                                    ,content: "치즈 퐁듀", location_id: 10, max_participants: 3
+                                    , price: 10, delivery_fee: 8143))
+     }
+ }
+ */
