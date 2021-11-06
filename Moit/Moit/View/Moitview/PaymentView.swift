@@ -31,7 +31,8 @@ struct PaymentView: View {
             }.padding(.vertical)
             ScrollView(.vertical,showsIndicators: false){
                 VStack(alignment:.leading,spacing : 5){
-                    Text("새 모잇 만들기").font(.custom("DoHyeon-Regular", size: 28))
+                    Text(order.type == .share ? "나누어 먹을래요" : "모여서 단건배달")
+                        .font(.custom("DoHyeon-Regular", size: 28))
                         .foregroundColor(.black)
                     Text("나누어 먹을래요").font(.custom("DoHyeon-Regular", size: 14))
                         .foregroundColor(Color("AppAccentColor"))

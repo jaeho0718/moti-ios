@@ -20,7 +20,7 @@ struct FoodCategoryMenuBarView: View {
                         Text(category.title).font(.custom("DoHyeon-Regular", size: 12))
                     }.frame(minWidth:40)
                         .foregroundColor( selectedCategory == category ?
-                                          Color("AppAccentColor") : .secondary )
+                                          Color("AppAccentColor") : Color("SecondaryTextColor") )
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
             }

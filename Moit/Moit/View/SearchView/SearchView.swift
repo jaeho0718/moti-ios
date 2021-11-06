@@ -17,11 +17,13 @@ struct SearchView: View {
             TextField("오늘은 어떤 음식을 모잇할까요?", text: $searchText)
                 .textFieldStyle(SearchTextFieldStyle(searchAction: {})).padding(.horizontal)
                 .padding(.top)
+                .foregroundColor(.black)
             
             ScrollView{
                 
             }
         }
+        .background(Color.white.ignoresSafeArea())
         .navigationTitle("").navigationBarHidden(true)
     }
 }

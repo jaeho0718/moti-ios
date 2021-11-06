@@ -12,13 +12,14 @@ struct UserInfoView: View {
         VStack{
             HStack{
                 Text("내 정보").font(.custom("DoHyeon-Regular", size: 28))
+                    .foregroundColor(.black)
                 Spacer()
                 MoitManerView(score: 4.0)
             }.padding(.horizontal,15)
             .padding(.top,20)
             .padding(.bottom,5)
             
-            Section{
+            Section{ 
                 UserInfoCell(key: "별명", value: "불타는 고구마")
                 UserInfoCell(key: "이메일 주소", value: "xxx@xxxx.com")
                 UserInfoCell(key: "이메일 주소", value: "010-0000-0000")

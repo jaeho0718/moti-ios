@@ -63,6 +63,7 @@ struct MoitView: View {
                 }
             }
         }.padding(.horizontal,15)
+        .background(Color.white.ignoresSafeArea())
         .navigationTitle("").navigationBarHidden(true)
         .onAppear{
             chooseType = true

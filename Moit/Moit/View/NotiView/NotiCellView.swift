@@ -18,6 +18,7 @@ struct NotiCellView: View {
             VStack(alignment:.leading, spacing: 0){
                 HStack{
                     Text(notification.title).font(.custom("DoHyeon-Regular", size: 16))
+                        .foregroundColor(.black)
                     Spacer(minLength: 0)
                     Text(notification.date.noti_date).font(.custom("DoHyeon-Regular", size: 12))
                         .foregroundColor(Color("SecondaryTextColor"))

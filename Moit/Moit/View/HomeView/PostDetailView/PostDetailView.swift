@@ -13,6 +13,10 @@ struct PostDetailView: View {
     @State private var check : Bool = false
     @State private var done : Bool = false
     
+    enum ShowType {
+        case latest,deadline
+    }
+    
     var post : Post
     
     var body: some View {
@@ -93,6 +97,7 @@ struct PostDetailView: View {
                     .frame(maxWidth:.infinity,minHeight:45)
             }.background(Color("AccentButtonColor").ignoresSafeArea())
         }
+        .background(Color.white.ignoresSafeArea())
         .overlay(DoneView(done: $done))
         .customAlert(show: $check){
             CustomNotiView(check: $check, title: "확인 부탁드립니다.",

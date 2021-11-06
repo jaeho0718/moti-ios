@@ -28,6 +28,7 @@ struct SectionView<Destination : View> : View {
                         .foregroundColor(Color("SectionTextColor"))
                     Spacer(minLength: 0)
                     Image(systemName: "chevron.compact.right")
+                        .foregroundColor(Color("SecondaryTextColor"))
                 }.padding(.horizontal,18)
                 .padding(.vertical,5)
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DoneView: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var done : Bool
     @State private var animation : Bool = false
     
@@ -33,6 +34,7 @@ struct DoneView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                     withAnimation(.easeInOut){
                         done = false
+                        presentationMode.wrappedValue.dismiss()
                     }
                 })
             }

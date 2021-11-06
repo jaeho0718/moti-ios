@@ -12,6 +12,7 @@ struct PointView: View {
         VStack(spacing:0){
             HStack{
                 Text("내 포인트").font(.custom("DoHyeon-Regular", size: 28))
+                    .foregroundColor(.black)
                 Spacer()
             }.padding(.horizontal,15)
             .padding(.vertical,15)

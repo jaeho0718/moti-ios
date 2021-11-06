@@ -17,7 +17,7 @@ struct UserInfoCell : View {
             Text(key).font(.custom("DoHyeon-Regular", size: 16))
             Spacer(minLength: 10)
             Text(value).font(.custom("DoHyeon-Regular", size: 16))
-        }.frame(height:48).accentColor(.black)
+        }.frame(height:48).foregroundColor(.black)
     }
 }
 

@@ -55,6 +55,9 @@
 		A6D71CA627364EEB0004BBDD /* MotiTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */; };
 		A6D71CA82736549C0004BBDD /* MoitManerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA72736549C0004BBDD /* MoitManerView.swift */; };
 		A6D71CAA273659A60004BBDD /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA9273659A60004BBDD /* OrderViewModel.swift */; };
+		A6D71CAC27365A160004BBDD /* KeyChainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAB27365A160004BBDD /* KeyChainModel.swift */; };
+		A6D71CAE273662670004BBDD /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAD273662670004BBDD /* KeychainError.swift */; };
+		A6D71CB0273667E10004BBDD /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAF273667E10004BBDD /* DataError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotiTypeSelectionView.swift; sourceTree = "<group>"; };
 		A6D71CA72736549C0004BBDD /* MoitManerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitManerView.swift; sourceTree = "<group>"; };
 		A6D71CA9273659A60004BBDD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		A6D71CAB27365A160004BBDD /* KeyChainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainModel.swift; sourceTree = "<group>"; };
+		A6D71CAD273662670004BBDD /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		A6D71CAF273667E10004BBDD /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +215,9 @@
 				A65B1D9E27351296003ECBD5 /* DataModel.swift */,
 				A699C5952735A83400ECBA5D /* NotificationModel.swift */,
 				A699C5972735AA4300ECBA5D /* DateModel.swift */,
+				A6D71CAB27365A160004BBDD /* KeyChainModel.swift */,
+				A6D71CAD273662670004BBDD /* KeychainError.swift */,
+				A6D71CAF273667E10004BBDD /* DataError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 				A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */,
 				A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */,
 				A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */,
+				A6D71CAE273662670004BBDD /* KeychainError.swift in Sources */,
 				A699C58F27359CD100ECBA5D /* TextFieldStyles.swift in Sources */,
 				A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */,
 				A65B1DC42735765A003ECBD5 /* PostMiniView.swift in Sources */,
@@ -509,6 +519,7 @@
 				A6D71CA0273641050004BBDD /* DetailLabel.swift in Sources */,
 				A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */,
 				A6D71CA82736549C0004BBDD /* MoitManerView.swift in Sources */,
+				A6D71CAC27365A160004BBDD /* KeyChainModel.swift in Sources */,
 				A6D71C9B27362ECD0004BBDD /* PostLargeCellView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
@@ -518,6 +529,7 @@
 				A6D71C9D273634410004BBDD /* PostDetailView.swift in Sources */,
 				A6D71CA22736441F0004BBDD /* CustomNotiView.swift in Sources */,
 				A699C5962735A83400ECBA5D /* NotificationModel.swift in Sources */,
+				A6D71CB0273667E10004BBDD /* DataError.swift in Sources */,
 				A65B1DC8273576B0003ECBD5 /* AsyncImageLoader.swift in Sources */,
 				A6A2BBC6273591C200949BB3 /* PostMidiumView.swift in Sources */,
 				A6D71CA627364EEB0004BBDD /* MotiTypeSelectionView.swift in Sources */,

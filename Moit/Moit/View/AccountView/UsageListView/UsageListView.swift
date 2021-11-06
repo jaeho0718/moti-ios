@@ -16,6 +16,7 @@ struct UsageListView: View {
                 VStack(alignment:.leading, spacing: 0){
                     HStack(alignment:.center,spacing:10){
                         Text("이번달 사용내역").font(.custom("DoHyeon-Regular", size: 28))
+                            .foregroundColor(.black)
                         Text("5건").font(.custom("DoHyeon-Regular", size: 20))
                             .foregroundColor(Color("SecondaryTextColor"))
                     }
@@ -23,6 +24,7 @@ struct UsageListView: View {
                         Text("총사용 포인트")
                         Text("36500 P")
                     }.font(.custom("DoHyeon-Regular", size: 14))
+                        .foregroundColor(.black)
                         .padding(.top,12)
                 }
                 Spacer()
@@ -39,6 +41,7 @@ struct UsageListView: View {
                             Text("\(usage.point) P").font(.custom("DoHyeon-Regular", size: 14))
                         }
                     }.frame(height:53)
+                    .foregroundColor(.black)
                     Divider()
                 }
             }

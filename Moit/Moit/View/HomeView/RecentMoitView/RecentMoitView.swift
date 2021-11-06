@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecentMoitView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.postdetailType) var postdetailType
     
     @EnvironmentObject var dataViewmodel : DataViewModel
     
@@ -35,7 +36,8 @@ struct RecentMoitView: View {
                     Image(systemName: "arrow.left")
                         .font(.system(size: 20, weight: .semibold, design: .default))
                 }.accentColor(Color("SecondaryTextColor"))
-                Text("최근 모잇").font(.custom("DoHyeon-Regular", size: 28))
+                Text(postdetailType == .latest ? "최근 모잇" : "마감 임박")
+                    .font(.custom("DoHyeon-Regular", size: 28))
                     .foregroundColor(.black)
                 Spacer()
             }.padding(.vertical)
@@ -72,5 +74,16 @@ struct RecentMoitView_Previews: PreviewProvider {
     static var previews: some View {
         RecentMoitView()
             .environmentObject(DataViewModel())
+    }
+}
+
+struct PostDetailEnvironmentKey : EnvironmentKey {
+    static let defaultValue : PostDetailView.ShowType = .latest
+}
+
+extension EnvironmentValues {
+    var postdetailType : PostDetailView.ShowType {
+        get { self[PostDetailEnvironmentKey.self] }
+        set { self[PostDetailEnvironmentKey.self] = newValue }
     }
 }

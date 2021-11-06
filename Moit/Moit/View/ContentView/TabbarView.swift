@@ -17,7 +17,8 @@ struct TabbarView: View {
                 Button(action:{system.tabitem = item}){
                     Image(systemName: item.icon).font(.system(size: 20))
                         .foregroundColor(
-                            system.tabitem == item ? Color("AppAccentColor") : .secondary
+                            system.tabitem == item ?
+                            Color("AppAccentColor") : Color("SecondaryTextColor")
                         )
                         .frame(height:35)
                 }

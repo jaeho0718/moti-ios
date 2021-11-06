@@ -25,12 +25,12 @@ struct PostMiniView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 6))
                 VStack(alignment : .leading, spacing : 0){
                     Text(post.title)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                         .font(.system(size: 13, weight: .semibold, design: .default))
                     Group{
                         Text("허니콤보").font(.system(size: 12, weight: .medium, design: .default))
                         Text("1/2명").font(.system(size: 10, weight: .medium, design: .default))
-                    }.foregroundColor(.secondary)
+                    }.foregroundColor(Color("SecondaryTextColor"))
                 }
             }
         }

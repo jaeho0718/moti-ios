@@ -17,11 +17,13 @@ struct HomeView: View {
             ScrollView(.vertical,showsIndicators: false){
                 SectionView(title: "최근", posts: $dataViewmodel.Posts){
                     RecentMoitView()
+                        .environment(\.postdetailType, .latest)
                         .environmentObject(dataViewmodel)
                 }
                 
                 SectionView(title: "마감임박", posts: $dataViewmodel.Posts){
                     RecentMoitView()
+                        .environment(\.postdetailType, .deadline)
                         .environmentObject(dataViewmodel)
                 }
                 

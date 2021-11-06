@@ -36,6 +36,7 @@ struct ContentView: View {
             }.ignoresSafeArea(.keyboard)
         }.navigationViewStyle(.stack)
         .overlay(SplashView())
+        .preferredColorScheme(.light)
     }
 }
 

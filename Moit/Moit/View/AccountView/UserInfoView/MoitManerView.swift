@@ -18,6 +18,7 @@ struct MoitManerView: View {
                     .foregroundColor(textColor())
                 Text("오잇 매너")
                     .font(.custom("DoHyeon-Regular",size:10))
+                    .foregroundColor(.black)
             }
             Group{
                 if score >= 4.0 {
