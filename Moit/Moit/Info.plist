@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -9,9 +14,10 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao2bca4e4909a3358d1b0089fc8d82d590</string>
+				<string>com.googleusercontent.apps.307929164328-v5nbse3goqs8bptneu7g730g6ms2feib</string>
 			</array>
 		</dict>
+		<dict/>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>

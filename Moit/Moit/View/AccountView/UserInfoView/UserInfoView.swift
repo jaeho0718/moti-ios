@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct UserInfoView: View {
+    
+    var user : User
+    
     var body: some View {
         VStack{
             HStack{
@@ -20,9 +23,9 @@ struct UserInfoView: View {
             .padding(.bottom,5)
             
             Section{ 
-                UserInfoCell(key: "별명", value: "불타는 고구마")
-                UserInfoCell(key: "이메일 주소", value: "xxx@xxxx.com")
-                UserInfoCell(key: "이메일 주소", value: "010-0000-0000")
+                UserInfoCell(key: "별명", value: user.name)
+                UserInfoCell(key: "이메일 주소", value: user.email)
+                UserInfoCell(key: "이메일 주소", value: user.phoneNumber)
                 UserInfoCell(key: "학교", value: "Uni")
             }.padding(.horizontal,15)
         }.background(Color.white)
@@ -31,7 +34,7 @@ struct UserInfoView: View {
 
 struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView()
+        UserInfoView(user: .init(id: 0, region_id: 0, university_id: 0, email: "", phoneNumber: "", name: "", point: 0, created_at: "", updated_at: ""))
     }
 }
 

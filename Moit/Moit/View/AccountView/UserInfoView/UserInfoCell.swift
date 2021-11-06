@@ -10,7 +10,7 @@ import SwiftUI
 struct UserInfoCell : View {
     
     var key : LocalizedStringKey
-    var value : LocalizedStringKey
+    var value : String
     
     var body: some View {
         HStack{

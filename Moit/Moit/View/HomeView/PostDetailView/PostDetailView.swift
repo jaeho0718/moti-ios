@@ -85,6 +85,7 @@ struct PostDetailView: View {
                         .foregroundColor(Color("SecondaryTextColor"))
                 }
                 .padding(.top,18)
+                .padding(.bottom,10)
                 
             }.padding(.horizontal,18)
                 .navigationTitle("").navigationBarHidden(true)

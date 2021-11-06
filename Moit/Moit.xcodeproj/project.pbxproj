@@ -58,6 +58,11 @@
 		A6D71CAC27365A160004BBDD /* KeyChainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAB27365A160004BBDD /* KeyChainModel.swift */; };
 		A6D71CAE273662670004BBDD /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAD273662670004BBDD /* KeychainError.swift */; };
 		A6D71CB0273667E10004BBDD /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CAF273667E10004BBDD /* DataError.swift */; };
+		A6D71CB227367F540004BBDD /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB127367F540004BBDD /* ResponseModel.swift */; };
+		A6D71CB4273689970004BBDD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB3273689970004BBDD /* LoginView.swift */; };
+		A6D71CB627369F870004BBDD /* GoogleSingInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */; };
+		A6D71CB82736A2560004BBDD /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6D71CB72736A2560004BBDD /* credentials.plist */; };
+		A6D71CBB2736B2A10004BBDD /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CBA2736B2A10004BBDD /* SingInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +120,11 @@
 		A6D71CAB27365A160004BBDD /* KeyChainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainModel.swift; sourceTree = "<group>"; };
 		A6D71CAD273662670004BBDD /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		A6D71CAF273667E10004BBDD /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		A6D71CB127367F540004BBDD /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		A6D71CB3273689970004BBDD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSingInButtonView.swift; sourceTree = "<group>"; };
+		A6D71CB72736A2560004BBDD /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../Assets/credentials.plist; sourceTree = "<group>"; };
+		A6D71CBA2736B2A10004BBDD /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +172,7 @@
 			children = (
 				A65B1DCB27357C22003ECBD5 /* Font */,
 				A65B1DC027356480003ECBD5 /* Info.plist */,
+				A6D71CB72736A2560004BBDD /* credentials.plist */,
 				A65B1D8D27351248003ECBD5 /* MoitApp.swift */,
 				A65B1D9D2735126D003ECBD5 /* Model */,
 				A65B1D9C27351266003ECBD5 /* ViewModel */,
@@ -183,6 +194,7 @@
 		A65B1D9B27351254003ECBD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71CB92736B2360004BBDD /* LoginView */,
 				A6D71CA327364B200004BBDD /* DoneView.swift */,
 				A6D71C9427361B000004BBDD /* CustomAlertView */,
 				A65B1DA5273517F5003ECBD5 /* ContentView */,
@@ -193,6 +205,7 @@
 				A65B1DAC27351B7D003ECBD5 /* NotiView */,
 				A65B1DAB27351B74003ECBD5 /* SearchView */,
 				A65B1DA027351384003ECBD5 /* SplashScreen */,
+				A6D71CB527369F870004BBDD /* GoogleSingInButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +231,7 @@
 				A6D71CAB27365A160004BBDD /* KeyChainModel.swift */,
 				A6D71CAD273662670004BBDD /* KeychainError.swift */,
 				A6D71CAF273667E10004BBDD /* DataError.swift */,
+				A6D71CB127367F540004BBDD /* ResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +357,7 @@
 				A699C59D2735B3C100ECBA5D /* UserInfoView.swift */,
 				A699C59F2735B52F00ECBA5D /* UserInfoCell.swift */,
 				A6D71CA72736549C0004BBDD /* MoitManerView.swift */,
+				A6D71CB3273689970004BBDD /* LoginView.swift */,
 			);
 			path = UserInfoView;
 			sourceTree = "<group>";
@@ -391,6 +406,14 @@
 			path = PostDetailView;
 			sourceTree = "<group>";
 		};
+		A6D71CB92736B2360004BBDD /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				A6D71CBA2736B2A10004BBDD /* SingInView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
 		AB25B5AD837D258F1D37CAE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,14 +433,13 @@
 				A65B1D8627351248003ECBD5 /* Sources */,
 				A65B1D8727351248003ECBD5 /* Frameworks */,
 				A65B1D8827351248003ECBD5 /* Resources */,
+				888848E6992015887094B9DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Moit;
-			packageProductDependencies = (
-			);
 			productName = Moit;
 			productReference = A65B1D8A27351248003ECBD5 /* Moit.app */;
 			productType = "com.apple.product-type.application";
@@ -446,8 +468,6 @@
 				Base,
 			);
 			mainGroup = A65B1D8127351248003ECBD5;
-			packageReferences = (
-			);
 			productRefGroup = A65B1D8B27351248003ECBD5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65B1D9527351249003ECBD5 /* Preview Assets.xcassets in Resources */,
+				A6D71CB82736A2560004BBDD /* credentials.plist in Resources */,
 				A65B1DCD27357C2D003ECBD5 /* DoHyeon-Regular.ttf in Resources */,
 				A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */,
 			);
@@ -493,6 +514,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		888848E6992015887094B9DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moit/Pods-Moit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moit/Pods-Moit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moit/Pods-Moit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -513,8 +551,10 @@
 				A65B1DB527351BC0003ECBD5 /* HomeView.swift in Sources */,
 				A65B1DC42735765A003ECBD5 /* PostMiniView.swift in Sources */,
 				A65B1DAF27351B8E003ECBD5 /* SearchView.swift in Sources */,
+				A6D71CBB2736B2A10004BBDD /* SingInView.swift in Sources */,
 				A699C5912735A4CA00ECBA5D /* NotiCellView.swift in Sources */,
 				A699C59B2735AF5D00ECBA5D /* MoitView.swift in Sources */,
+				A6D71CB4273689970004BBDD /* LoginView.swift in Sources */,
 				A6D71C862735E93B0004BBDD /* RestaurantCellView.swift in Sources */,
 				A6D71CA0273641050004BBDD /* DetailLabel.swift in Sources */,
 				A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */,
@@ -524,6 +564,7 @@
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
 				A6D71C882735ECEB0004BBDD /* RestaurentDetailView.swift in Sources */,
+				A6D71CB627369F870004BBDD /* GoogleSingInButtonView.swift in Sources */,
 				A699C59E2735B3C100ECBA5D /* UserInfoView.swift in Sources */,
 				A6D71CAA273659A60004BBDD /* OrderViewModel.swift in Sources */,
 				A6D71C9D273634410004BBDD /* PostDetailView.swift in Sources */,
@@ -546,6 +587,7 @@
 				A6D71CA427364B200004BBDD /* DoneView.swift in Sources */,
 				A65B1DB327351BA6003ECBD5 /* AccountView.swift in Sources */,
 				A65B1DB127351B99003ECBD5 /* NotiView.swift in Sources */,
+				A6D71CB227367F540004BBDD /* ResponseModel.swift in Sources */,
 				A65B1D9F27351296003ECBD5 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

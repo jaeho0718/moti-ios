@@ -115,7 +115,7 @@ struct Category : Identifiable,Codable{
 }
 
 struct MenuData : Identifiable,Codable{
-    var id : Int
+    var id : String
     var restaurant_id : Int
     var title : String
     var price : Int
@@ -145,25 +145,24 @@ struct Participants : Identifiable,Codable{
 struct Restaurant : Identifiable,Codable{
     var id : Int
     var category_id : Int
-    var open_at : Int
-    var close_at : Int
-    var location_id : Int
-    var delivery_fee : Int
-    var account : String
-    var imageURL : String
-    //var created_at :
-    //var updated_at
+    var categoryName : String
+    var menus : [String]
+    var fees : [String]
+    var name : String
+    var openAt : String
+    var closeAt : String
 }
 
 struct User : Identifiable,Codable{
     var id : Int
+    var region_id : Int
+    var university_id : Int
     var email : String
-    var phone : String
+    var phoneNumber : String
     var name : String
-    var location_id : Int
-    //var created_at :
-    //var updated_at
     var point : Int
+    var created_at : String
+    var updated_at : String
 }
 
 struct Location : Identifiable,Codable{
@@ -177,4 +176,20 @@ struct Usage : Identifiable {
     var date : Date
     var point : Int
     var restraunt : String //나중에 id로 교체할 것
+}
+
+struct KeychainData : Codable {
+    var accessToken : String
+}
+
+struct OrderModel : Codable {
+    var restaurantId : Int
+    var menus : [[String : Int]]
+    var message : String
+    var maxParticipants : Int
+}
+
+struct UniversityModel : Codable {
+    var id : Int
+    var name : String
 }

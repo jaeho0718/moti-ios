@@ -184,16 +184,30 @@ struct PaymentView: View {
             CustomNotiView(check: $check, title: "확인 부탁드립니다.",
                            content: "\(order.totalPrice()) 포인트가 차감되며 주문 실패시 고객님의 계정으로 반환합니다.",
                            cancleTitle: "등록 취소", confirmTitle: "확인",
-                           cancelAction: {}, confirmAction: {done.toggle()})
+                           cancelAction: {}, confirmAction: {
+                order.postOrder(completion: { result in
+                    done.toggle()
+                    switch result{
+                    case .success(_) :
+                        print("성공적으로 주문함")
+                    case .failure(let error) :
+                        print("주문 Error : \(error.localizedDescription)")
+                    }
+                })
+            })
         })
         .navigationTitle("").navigationBarHidden(true)
     }
 }
 
-struct PaymentView_Previews: PreviewProvider {
-    static var previews: some View {
-        PaymentView(restaurent: .init(id: 0, category_id: 0, open_at: 0, close_at: 0,
-                                      location_id: 0, delivery_fee: 5000, account: "교촌치킨 중앙대후문점" , imageURL: "https://lh3.googleusercontent.com/proxy/CzSkRGTFEGRdBM8mq-WPgGWBgwzZT5dfmMAnA15zVmSVRrXbVzLIfsVfVyU3jtZIIh71Wu013tH_H2NRfALYsFYapXvLQ-8ulCp7rg"))
-            .environmentObject(OrderViewModel())
-    }
-}
+/*
+ struct PaymentView_Previews: PreviewProvider {
+     static var previews: some View {
+         PaymentView(restaurent: .init(id: 0, category_id: 0, open_at: 0, close_at: 0
+                                       ,location_id: 0, delivery_fee: 0, account: ""
+                                       ,imageURL: "", created_at: "", updated_at: ""))
+             .environmentObject(OrderViewModel())
+     }
+ }
+
+ */

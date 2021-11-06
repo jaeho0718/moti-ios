@@ -6,25 +6,22 @@
 //
 
 import SwiftUI
-
-import KakaoSDKCommon
-import KakaoSDKAuth
+import GoogleSignIn
 
 @main
 struct MoitApp: App {
     
-    init(){
-        // Kakao SDK 초기화
-        KakaoSDKCommon.initSDK(appKey: "2bca4e4909a3358d1b0089fc8d82d590")
+    init() {
+        GIDSignIn.sharedInstance.restorePreviousSignIn(callback: { user,error in
+            
+        })
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .onOpenURL(perform: { url in
-                    if AuthApi.isKakaoTalkLoginUrl(url) {
-                        _ = AuthController.handleOpenUrl(url: url)
-                    }
+                    _ = GIDSignIn.sharedInstance.handle(url)
                 })
         }
     }

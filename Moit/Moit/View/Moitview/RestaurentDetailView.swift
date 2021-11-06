@@ -38,13 +38,15 @@ struct RestaurentDetailView: View {
             }.frame(maxWidth:.infinity,alignment: .leading)
             
             HStack{
-                Text(restaurent.account)
+                Text(restaurent.name)
                     .font(.custom("DoHyeon-Regular", size: 16))
                     .foregroundColor(.black)
                 Spacer(minLength: 5)
-                Text("배달팁  \(restaurent.delivery_fee)")
-                    .font(.custom("DoHyeon-Regular", size: 16))
-                    .foregroundColor(Color("SecondaryTextColor"))
+                /*
+                 Text("배달팁  \(restaurent.fees.first ?? "")")
+                     .font(.custom("DoHyeon-Regular", size: 16))
+                     .foregroundColor(Color("SecondaryTextColor"))
+                 */
             }
             .padding(.horizontal,9)
             .frame(height:36)
@@ -87,25 +89,21 @@ struct RestaurentDetailView: View {
         }.padding(.horizontal,15)
         .navigationTitle("").navigationBarHidden(true)
         .onAppear{
-            //음식점의 메뉴를 불러옵니다.
-            dataViewmodel.loadRestaurantMenu(id: restaurent.id, completion: { result in
-                do{
-                    order.menus = try result.get()
-                } catch {
-                    
-                }
-            })
+            order.generageMenus(restaurent: restaurent)
         }
     }
 }
 
-struct RestaurentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurentDetailView(restaurent: .init(id: 0, category_id: 0, open_at: 0, close_at: 0, location_id: 0, delivery_fee: 5000, account: "교촌치킨", imageURL: ""))
-            .environmentObject(DataViewModel())
-            .environmentObject(OrderViewModel())
-    }
-}
+/*
+ struct RestaurentDetailView_Previews: PreviewProvider {
+     static var previews: some View {
+         RestaurentDetailView(restaurent:.init(id: <#T##Int#>, category_id: <#T##Int#>, categoryName: <#T##String#>, menus: <#T##[String]#>, fees: <#T##[String]#>, name: <#T##String#>, openAt: <#T##String#>, closeAt: <#T##String#>))
+             .environmentObject(DataViewModel())
+             .environmentObject(OrderViewModel())
+     }
+ }
+ */
+
 
 struct MenuCell : View {
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct MoitView: View {
     
@@ -44,12 +45,13 @@ struct MoitView: View {
                 onLoad = true
                 dataViewmodel.searchRestaurant(text: searchText
                     ,completion: { response in
-                    onLoad = false
-                    do{
-                        self.results = try response.get()
-                    } catch {
-                        
+                    switch response {
+                    case .success(let result) :
+                        self.results = result
+                    case .failure(let error) :
+                        print("Search Error : \(error.localizedDescription)")
                     }
+                    onLoad = false
                 })
             })
             .textFieldStyle(BorderedTextFieldStyle())
@@ -68,6 +70,9 @@ struct MoitView: View {
         .onAppear{
             chooseType = true
         }
+        .toast(isPresenting: $onLoad, alert: {
+            AlertToast(displayMode: .alert, type: .loading)
+        })
     }
 }
 

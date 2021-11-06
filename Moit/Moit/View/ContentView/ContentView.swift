@@ -35,7 +35,7 @@ struct ContentView: View {
                 TabbarView().environmentObject(system)
             }.ignoresSafeArea(.keyboard)
         }.navigationViewStyle(.stack)
-        .overlay(SplashView())
+        .overlay(SplashView().environmentObject(loginViewmodel))
         .preferredColorScheme(.light)
     }
 }
@@ -43,5 +43,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension UINavigationController {
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
     }
 }

@@ -21,7 +21,7 @@ struct TopbarView: View {
                 Image(systemName: "gearshape.fill").font(.system(size: 20))
             }
         }.padding(.horizontal)
-        .padding(.vertical)
+            .padding(.top).padding(.bottom,8)
         .foregroundColor(Color("AppAccentColor"))
         .background(Color.white.ignoresSafeArea())
         
