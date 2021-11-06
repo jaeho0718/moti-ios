@@ -109,7 +109,7 @@ struct RestaurentDetailView_Previews: PreviewProvider {
 
 struct MenuCell : View {
     
-    @Binding var menu : Menu
+    @Binding var menu : MenuData
     
     var body: some View {
         Button(action:{ menu.isSelected.toggle() }){

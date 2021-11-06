@@ -13,18 +13,31 @@ struct MoitView: View {
     @StateObject var order = OrderViewModel()
     
     @State private var results : [Restaurant] = []
-    
+    @State private var chooseType : Bool = true
     @State private var onLoad : Bool = false
     @State private var searchText : String = ""
     
     var body: some View {
         VStack(alignment:.leading){
             VStack(alignment:.leading,spacing : 5){
-                Text("새 모잇 만들기").font(.custom("DoHyeon-Regular", size: 28))
-                    .foregroundColor(.black)
-                Text(order.type == .share ? "나누어 먹을래요" : "모여서 단건배달")
-                    .font(.custom("DoHyeon-Regular", size: 14))
-                    .foregroundColor(Color("AppAccentColor"))
+                HStack{
+                    Text("새 모잇 만들기").font(.custom("DoHyeon-Regular", size: 28))
+                    Spacer(minLength: 0)
+                    Menu(content: {
+                        ForEach(OrderType.allCases){ type in
+                            Button(action:{order.type = type}){
+                                Text(type.title)
+                                    .font(.custom("DoHyeon-Regular", size: 14))
+                            }
+                        }
+                    }, label: {
+                        HStack{
+                            Text(order.type.title)
+                                .font(.custom("DoHyeon-Regular", size: 14))
+                            Image(systemName: "chevron.down")
+                        }.foregroundColor(Color("AppAccentColor"))
+                    })
+                }.foregroundColor(.black).padding(.top,15)
             }.frame(maxWidth:.infinity,alignment: .leading)
             
             TextField("음식점 검색",text: $searchText,onCommit: {
@@ -42,7 +55,6 @@ struct MoitView: View {
             .textFieldStyle(BorderedTextFieldStyle())
             .padding(.top,22)
             
-            
             ScrollView(.vertical,showsIndicators: false){
                 ForEach(results){ restaurant in
                     RestaurantCellView(restaurent: restaurant)
@@ -52,6 +64,9 @@ struct MoitView: View {
             }
         }.padding(.horizontal,15)
         .navigationTitle("").navigationBarHidden(true)
+        .onAppear{
+            chooseType = true
+        }
     }
 }
 

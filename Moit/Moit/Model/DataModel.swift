@@ -87,8 +87,17 @@ enum CategoryType : String,Identifiable,CaseIterable {
     }
 }
 
-enum OrderType : Identifiable {
+enum OrderType : String,Identifiable,CaseIterable {
     case together,share
+    
+    var title : LocalizedStringKey{
+        switch self {
+        case .together:
+            return "모여서 단건배달"
+        case .share:
+            return "나누어 먹을래요"
+        }
+    }
     
     var id : Int {
         switch self {
@@ -105,7 +114,7 @@ struct Category : Identifiable,Codable{
     var title : String
 }
 
-struct Menu : Identifiable,Codable{
+struct MenuData : Identifiable,Codable{
     var id : Int
     var restaurant_id : Int
     var title : String

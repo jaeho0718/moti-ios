@@ -33,7 +33,7 @@ struct ContentView: View {
                         .opacity(system.tabitem == SystemViewModel.TabItems.account ? 1 : 0)
                 }.frame(maxWidth:.infinity,maxHeight: .infinity)
                 TabbarView().environmentObject(system)
-            }
+            }.ignoresSafeArea(.keyboard)
         }.navigationViewStyle(.stack)
         .overlay(SplashView())
     }

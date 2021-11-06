@@ -50,6 +50,12 @@
 		A6D71C9627361B250004BBDD /* CustomAlertViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */; };
 		A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C98273627950004BBDD /* RecentMoitView.swift */; };
 		A6D71C9B27362ECD0004BBDD /* PostLargeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */; };
+		A6D71C9D273634410004BBDD /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9C273634410004BBDD /* PostDetailView.swift */; };
+		A6D71CA0273641050004BBDD /* DetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9F273641050004BBDD /* DetailLabel.swift */; };
+		A6D71CA22736441F0004BBDD /* CustomNotiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA12736441F0004BBDD /* CustomNotiView.swift */; };
+		A6D71CA427364B200004BBDD /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA327364B200004BBDD /* DoneView.swift */; };
+		A6D71CA627364EEB0004BBDD /* MotiTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */; };
+		A6D71CA82736549C0004BBDD /* MoitManerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA72736549C0004BBDD /* MoitManerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +104,12 @@
 		A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModifier.swift; sourceTree = "<group>"; };
 		A6D71C98273627950004BBDD /* RecentMoitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMoitView.swift; sourceTree = "<group>"; };
 		A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLargeCellView.swift; sourceTree = "<group>"; };
+		A6D71C9C273634410004BBDD /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		A6D71C9F273641050004BBDD /* DetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLabel.swift; sourceTree = "<group>"; };
+		A6D71CA12736441F0004BBDD /* CustomNotiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotiView.swift; sourceTree = "<group>"; };
+		A6D71CA327364B200004BBDD /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
+		A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotiTypeSelectionView.swift; sourceTree = "<group>"; };
+		A6D71CA72736549C0004BBDD /* MoitManerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitManerView.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,11 +179,11 @@
 		A65B1D9B27351254003ECBD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71CA327364B200004BBDD /* DoneView.swift */,
 				A6D71C9427361B000004BBDD /* CustomAlertView */,
 				A65B1DA5273517F5003ECBD5 /* ContentView */,
 				A699C5992735AF5600ECBA5D /* Moitview */,
 				A699C58D27359CC700ECBA5D /* Style */,
-				A65B1DBA2735200F003ECBD5 /* LoginView */,
 				A65B1DAA27351B6B003ECBD5 /* HomeView */,
 				A65B1DAD27351B83003ECBD5 /* AccountView */,
 				A65B1DAC27351B7D003ECBD5 /* NotiView */,
@@ -223,6 +235,8 @@
 		A65B1DAA27351B6B003ECBD5 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71CA12736441F0004BBDD /* CustomNotiView.swift */,
+				A6D71C9E273640F80004BBDD /* PostDetailView */,
 				A6D71C97273627540004BBDD /* RecentMoitView */,
 				A6A2BBC027358B5B00949BB3 /* FoodListView */,
 				A65B1DC527357691003ECBD5 /* PostMiniView */,
@@ -269,13 +283,6 @@
 			path = PointView;
 			sourceTree = "<group>";
 		};
-		A65B1DBA2735200F003ECBD5 /* LoginView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LoginView;
-			sourceTree = "<group>";
-		};
 		A65B1DC527357691003ECBD5 /* PostMiniView */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +325,7 @@
 				A6D71C852735E93B0004BBDD /* RestaurantCellView.swift */,
 				A6D71C872735ECEB0004BBDD /* RestaurentDetailView.swift */,
 				A6D71C892735FAF50004BBDD /* PaymentView.swift */,
+				A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */,
 			);
 			path = Moitview;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 			children = (
 				A699C59D2735B3C100ECBA5D /* UserInfoView.swift */,
 				A699C59F2735B52F00ECBA5D /* UserInfoCell.swift */,
+				A6D71CA72736549C0004BBDD /* MoitManerView.swift */,
 			);
 			path = UserInfoView;
 			sourceTree = "<group>";
@@ -364,6 +373,15 @@
 				A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */,
 			);
 			path = RecentMoitView;
+			sourceTree = "<group>";
+		};
+		A6D71C9E273640F80004BBDD /* PostDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A6D71C9C273634410004BBDD /* PostDetailView.swift */,
+				A6D71C9F273641050004BBDD /* DetailLabel.swift */,
+			);
+			path = PostDetailView;
 			sourceTree = "<group>";
 		};
 		AB25B5AD837D258F1D37CAE6 /* Frameworks */ = {
@@ -492,15 +510,20 @@
 				A699C5912735A4CA00ECBA5D /* NotiCellView.swift in Sources */,
 				A699C59B2735AF5D00ECBA5D /* MoitView.swift in Sources */,
 				A6D71C862735E93B0004BBDD /* RestaurantCellView.swift in Sources */,
+				A6D71CA0273641050004BBDD /* DetailLabel.swift in Sources */,
 				A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */,
+				A6D71CA82736549C0004BBDD /* MoitManerView.swift in Sources */,
 				A6D71C9B27362ECD0004BBDD /* PostLargeCellView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
 				A6D71C882735ECEB0004BBDD /* RestaurentDetailView.swift in Sources */,
 				A699C59E2735B3C100ECBA5D /* UserInfoView.swift in Sources */,
+				A6D71C9D273634410004BBDD /* PostDetailView.swift in Sources */,
+				A6D71CA22736441F0004BBDD /* CustomNotiView.swift in Sources */,
 				A699C5962735A83400ECBA5D /* NotificationModel.swift in Sources */,
 				A65B1DC8273576B0003ECBD5 /* AsyncImageLoader.swift in Sources */,
 				A6A2BBC6273591C200949BB3 /* PostMidiumView.swift in Sources */,
+				A6D71CA627364EEB0004BBDD /* MotiTypeSelectionView.swift in Sources */,
 				A6A2BBBF27358B1D00949BB3 /* FoodListView.swift in Sources */,
 				A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */,
 				A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */,
@@ -512,6 +535,7 @@
 				A65B1DC227357004003ECBD5 /* SectionView.swift in Sources */,
 				A6A2BBC427358F9500949BB3 /* FoodCategoryMenuBarView.swift in Sources */,
 				A65B1DCA273576DD003ECBD5 /* AsyncImageView.swift in Sources */,
+				A6D71CA427364B200004BBDD /* DoneView.swift in Sources */,
 				A65B1DB327351BA6003ECBD5 /* AccountView.swift in Sources */,
 				A65B1DB127351B99003ECBD5 /* NotiView.swift in Sources */,
 				A65B1D9F27351296003ECBD5 /* DataModel.swift in Sources */,

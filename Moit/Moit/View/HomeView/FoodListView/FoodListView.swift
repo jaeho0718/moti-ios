@@ -28,7 +28,7 @@ struct FoodListView: View {
             LazyVStack(spacing:10){
                 //filter 추가하기
                 ForEach(dataViewmodel.Posts.prefix(5)){ post in
-                    PostMidiumView(post: post)
+                    PostMidiumView(post: post)//.environmentObject(dataViewmodel)
                 }.padding(.horizontal,18)
             }.padding(.top,15)
             .padding(.bottom,46)

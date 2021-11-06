@@ -12,29 +12,34 @@ struct PostMidiumView: View {
     var post : Post
     
     var body: some View {
-        HStack(alignment:.top , spacing:8){
-            AsyncImageView(url: loadRestaurantImage(), placeholder: {
-                Rectangle()
-            },image: { uiimage in
-                Image(uiImage: uiimage).resizable()
-            }).aspectRatio(contentMode: .fill)
-            .frame(width: 84, height: 87, alignment: .center).clipped()
-            
-            VStack(alignment:.leading,spacing : 0){
-                Text(post.title).font(.custom("DoHyeon-Regular", size: 16))
-                Text(post.title).font(.custom("DoHyeon-Regular", size: 12))
-                    .foregroundColor(Color("SecondaryTextColor")).padding(.top,3)
-                Spacer()
-                Text("\(2)/\(post.max_participants)명")
-                    .font(.custom("DoHyeon-Regular", size: 12))
-                        .foregroundColor(Color("SecondaryTextColor")).padding(.top,7)
-                Text("필요금액 : \(post.delivery_fee)원")
-                    .font(.custom("DoHyeon-Regular", size: 12))
-                    .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
-                    .padding(.bottom,6)
+        NavigationLink(destination:{
+            PostDetailView(post: post)
+        }){
+            HStack(alignment:.top , spacing:8){
+                AsyncImageView(url: loadRestaurantImage(), placeholder: {
+                    Rectangle()
+                },image: { uiimage in
+                    Image(uiImage: uiimage).resizable()
+                }).aspectRatio(contentMode: .fill)
+                .frame(width: 84, height: 87, alignment: .center).clipped()
+                
+                VStack(alignment:.leading,spacing : 0){
+                    Text(post.title).font(.custom("DoHyeon-Regular", size: 16))
+                        .foregroundColor(.black)
+                    Text(post.content).font(.custom("DoHyeon-Regular", size: 12))
+                        .foregroundColor(Color("SecondaryTextColor")).padding(.top,3)
+                    Spacer()
+                    Text("\(2)/\(post.max_participants)명")
+                        .font(.custom("DoHyeon-Regular", size: 12))
+                            .foregroundColor(Color("SecondaryTextColor")).padding(.top,7)
+                    Text("필요금액 : \(post.delivery_fee)원")
+                        .font(.custom("DoHyeon-Regular", size: 12))
+                        .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
+                        .padding(.bottom,6)
+                }
+                .frame(maxWidth:.infinity, alignment: .leading)
+                .padding(.top,5)
             }
-            .frame(maxWidth:.infinity, alignment: .leading)
-            .padding(.top,5)
         }
         .frame(height:87)
         .background(Color.white)
@@ -50,7 +55,7 @@ struct PostMidiumView: View {
 struct PostMidiumView_Previews: PreviewProvider {
     static var previews: some View {
         PostMidiumView(post: .init(id: 1, writer_id: 1, title: "도미노피자 여의도점"
-                                   ,content: "", location_id: 10, max_participants: 3
+                                   ,content: "치즈 퐁듀", location_id: 10, max_participants: 3
                                    , price: 10, delivery_fee: 8143))
     }
 }

@@ -47,7 +47,7 @@ class DataViewModel : ObservableObject {
             , imageURL: "https://lh3.googleusercontent.com/proxy/CzSkRGTFEGRdBM8mq-WPgGWBgwzZT5dfmMAnA15zVmSVRrXbVzLIfsVfVyU3jtZIIh71Wu013tH_H2NRfALYsFYapXvLQ-8ulCp7rg")]))
     }
     
-    func loadRestaurantMenu(id : Int, completion : @escaping (Result<[Menu],Error>) -> Void) {
+    func loadRestaurantMenu(id : Int, completion : @escaping (Result<[MenuData],Error>) -> Void) {
         completion(.success([
             .init(id: 0, restaurant_id: 0, title: "교촌신화오리지날", price: 18000, image_id: 0, isSelected: false)
             ,.init(id: 1, restaurant_id: 0, title: "교촌오리지날", price: 18000, image_id: 0, isSelected: false)

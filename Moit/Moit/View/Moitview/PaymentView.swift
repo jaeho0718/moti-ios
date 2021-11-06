@@ -14,6 +14,7 @@ struct PaymentView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var check : Bool = false
+    @State private var done : Bool = false
     
     var restaurent : Restaurant
     
@@ -177,41 +178,12 @@ struct PaymentView: View {
         }
         .padding(.horizontal,15)
         .frame(maxHeight:.infinity,alignment: .topLeading)
+        .overlay(DoneView(done:$done))
         .customAlert(show: $check, alert: {
-            VStack(alignment:.leading, spacing:0){
-                Text("확인 부탁드립니다.")
-                    .font(.custom("DoHyeon-Regular", size: 18))
-                    .foregroundColor(.white)
-                    .padding(.bottom,5).padding(.top,10)
-                    .frame(maxWidth:.infinity,alignment:.leading).padding(.horizontal)
-                    .background(Color("AccentButtonColor"))
-                Text("\(order.totalPrice()) 포인트가 차감되며 주문 실패시\n고객님의 계정으로 반환됩니다.")
-                    .font(.custom("DoHyeon-Regular", size: 14))
-                    .padding(.top,19)
-                    .padding(.horizontal)
-                Spacer()
-                HStack{
-                    Button(action:{
-                        check.toggle()
-                    }){
-                        Text("등록 취소")
-                            .font(.custom("DoHyeon-Regular", size: 14))
-                            .frame(maxWidth:.infinity,minHeight:28)
-                    }
-                    .accentColor(Color("SecondaryTextColor"))
-                    
-                    Button(action:{
-                        check.toggle()
-                    }){
-                        Text("확인")
-                            .font(.custom("DoHyeon-Regular", size: 14))
-                            .frame(maxWidth:.infinity,minHeight:28)
-                    }.accentColor(Color("AccentButtonColor"))
-                }
-            }
-            .frame(maxWidth:.infinity,maxHeight: .infinity,alignment:.leading)
-            .background(Color.white)
-            .cornerRadius(10)
+            CustomNotiView(check: $check, title: "확인 부탁드립니다.",
+                           content: "\(order.totalPrice()) 포인트가 차감되며 주문 실패시 고객님의 계정으로 반환합니다.",
+                           cancleTitle: "등록 취소", confirmTitle: "확인",
+                           cancelAction: {}, confirmAction: {done.toggle()})
         })
         .navigationTitle("").navigationBarHidden(true)
     }

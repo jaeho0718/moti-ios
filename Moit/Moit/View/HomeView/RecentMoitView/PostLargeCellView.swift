@@ -13,40 +13,45 @@ struct PostLargeCellView: View {
     var post : Post
     
     var body: some View {
-        HStack{
-            AsyncImageView(url: loadRestaurantImage(), placeholder: {
-                Rectangle()
-            },image: { uiimage in
-                Image(uiImage: uiimage).resizable()
-            }).aspectRatio(contentMode: .fill).frame(width: postType == .share ? 112 : 86,
-                                                     height: postType == .share ? 112 : 86,
-                                                     alignment: .center).clipped()
-            
-            VStack(alignment:.leading,spacing : 0){
-                Text(post.title).font(.custom("DoHyeon-Regular", size: 17))
-                Spacer()
-                if postType == .share {
-                    Text("소분 용기 : 가게 요청")
-                        .font(.custom("DoHyeon-Regular", size: 12))
-                            .foregroundColor(Color("SecondaryTextColor"))
-                    Text("남은 인원 : \(post.max_participants - 2)명")
-                        .font(.custom("DoHyeon-Regular", size: 12))
-                            .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
-                }
-                Text("필요 금액 : \(post.delivery_fee)원")
-                    .font(.custom("DoHyeon-Regular", size: 12))
-                    .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
+        NavigationLink(destination:{
+            PostDetailView(post: post)
+        }){
+            HStack{
+                AsyncImageView(url: loadRestaurantImage(), placeholder: {
+                    Rectangle()
+                },image: { uiimage in
+                    Image(uiImage: uiimage).resizable()
+                }).aspectRatio(contentMode: .fill).frame(width: postType == .share ? 112 : 86,
+                                                         height: postType == .share ? 112 : 86,
+                                                         alignment: .center).clipped()
                 
-                if postType == .together {
-                    Text("개인별 배달팁 : \(post.delivery_fee)원")
+                VStack(alignment:.leading,spacing : 0){
+                    Text(post.title).font(.custom("DoHyeon-Regular", size: 17))
+                        .foregroundColor(.black)
+                    Spacer()
+                    if postType == .share {
+                        Text("소분 용기 : 가게 요청")
+                            .font(.custom("DoHyeon-Regular", size: 12))
+                                .foregroundColor(Color("SecondaryTextColor"))
+                        Text("남은 인원 : \(post.max_participants - 2)명")
+                            .font(.custom("DoHyeon-Regular", size: 12))
+                                .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
+                    }
+                    Text("필요 금액 : \(post.delivery_fee)원")
                         .font(.custom("DoHyeon-Regular", size: 12))
                         .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
+                    
+                    if postType == .together {
+                        Text("개인별 배달팁 : \(post.delivery_fee)원")
+                            .font(.custom("DoHyeon-Regular", size: 12))
+                            .foregroundColor(Color("SecondaryTextColor")).padding(.top,2)
+                    }
                 }
+                .padding(.bottom,6)
+                .frame(maxWidth:.infinity, alignment: .leading)
+                .padding(.top,5)
+                
             }
-            .padding(.bottom,6)
-            .frame(maxWidth:.infinity, alignment: .leading)
-            .padding(.top,5)
-            
         }.frame(height: postType == .share ? 112 : 86)
         .background(Color.white)
         .cornerRadius(8)

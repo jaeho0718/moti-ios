@@ -13,6 +13,7 @@ struct UserInfoView: View {
             HStack{
                 Text("내 정보").font(.custom("DoHyeon-Regular", size: 28))
                 Spacer()
+                MoitManerView(score: 4.0)
             }.padding(.horizontal,15)
             .padding(.top,20)
             .padding(.bottom,5)
