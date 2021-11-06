@@ -48,6 +48,8 @@
 		A6D71C91273600E60004BBDD /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = A6D71C90273600E60004BBDD /* SwiftUIPullToRefresh */; };
 		A6D71C93273616000004BBDD /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C92273616000004BBDD /* ToggleStyles.swift */; };
 		A6D71C9627361B250004BBDD /* CustomAlertViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */; };
+		A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C98273627950004BBDD /* RecentMoitView.swift */; };
+		A6D71C9B27362ECD0004BBDD /* PostLargeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		A6D71C8B2735FB660004BBDD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		A6D71C92273616000004BBDD /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 		A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModifier.swift; sourceTree = "<group>"; };
+		A6D71C98273627950004BBDD /* RecentMoitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMoitView.swift; sourceTree = "<group>"; };
+		A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLargeCellView.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,6 +223,7 @@
 		A65B1DAA27351B6B003ECBD5 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71C97273627540004BBDD /* RecentMoitView */,
 				A6A2BBC027358B5B00949BB3 /* FoodListView */,
 				A65B1DC527357691003ECBD5 /* PostMiniView */,
 				A65B1DB427351BC0003ECBD5 /* HomeView.swift */,
@@ -352,6 +357,15 @@
 			path = CustomAlertView;
 			sourceTree = "<group>";
 		};
+		A6D71C97273627540004BBDD /* RecentMoitView */ = {
+			isa = PBXGroup;
+			children = (
+				A6D71C98273627950004BBDD /* RecentMoitView.swift */,
+				A6D71C9A27362ECD0004BBDD /* PostLargeCellView.swift */,
+			);
+			path = RecentMoitView;
+			sourceTree = "<group>";
+		};
 		AB25B5AD837D258F1D37CAE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +492,8 @@
 				A699C5912735A4CA00ECBA5D /* NotiCellView.swift in Sources */,
 				A699C59B2735AF5D00ECBA5D /* MoitView.swift in Sources */,
 				A6D71C862735E93B0004BBDD /* RestaurantCellView.swift in Sources */,
+				A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */,
+				A6D71C9B27362ECD0004BBDD /* PostLargeCellView.swift in Sources */,
 				A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */,
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
 				A6D71C882735ECEB0004BBDD /* RestaurentDetailView.swift in Sources */,

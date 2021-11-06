@@ -30,7 +30,7 @@ struct HomeView: View {
                 }.font(.custom("DoHyeon-Regular", size: 12))
             }){
                 VStack{
-                    SectionView(title: "최근", posts: $dataViewmodel.Posts){}
+                    SectionView(title: "최근", posts: $dataViewmodel.Posts){RecentMoitView()}
                     
                     SectionView(title: "마감임박", posts: $dataViewmodel.Posts){}
                     
@@ -45,7 +45,9 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(DataViewModel())
+        NavigationView{
+            HomeView()
+                .environmentObject(DataViewModel())
+        }.navigationViewStyle(.stack)
     }
 }
