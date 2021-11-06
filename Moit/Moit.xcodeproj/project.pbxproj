@@ -44,8 +44,6 @@
 		A6D71C862735E93B0004BBDD /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C852735E93B0004BBDD /* RestaurantCellView.swift */; };
 		A6D71C882735ECEB0004BBDD /* RestaurentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C872735ECEB0004BBDD /* RestaurentDetailView.swift */; };
 		A6D71C8A2735FAF50004BBDD /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C892735FAF50004BBDD /* PaymentView.swift */; };
-		A6D71C8C2735FB660004BBDD /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C8B2735FB660004BBDD /* OrderViewModel.swift */; };
-		A6D71C91273600E60004BBDD /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = A6D71C90273600E60004BBDD /* SwiftUIPullToRefresh */; };
 		A6D71C93273616000004BBDD /* ToggleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C92273616000004BBDD /* ToggleStyles.swift */; };
 		A6D71C9627361B250004BBDD /* CustomAlertViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */; };
 		A6D71C99273627950004BBDD /* RecentMoitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71C98273627950004BBDD /* RecentMoitView.swift */; };
@@ -56,6 +54,7 @@
 		A6D71CA427364B200004BBDD /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA327364B200004BBDD /* DoneView.swift */; };
 		A6D71CA627364EEB0004BBDD /* MotiTypeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */; };
 		A6D71CA82736549C0004BBDD /* MoitManerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA72736549C0004BBDD /* MoitManerView.swift */; };
+		A6D71CAA273659A60004BBDD /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71CA9273659A60004BBDD /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +98,6 @@
 		A6D71C852735E93B0004BBDD /* RestaurantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellView.swift; sourceTree = "<group>"; };
 		A6D71C872735ECEB0004BBDD /* RestaurentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurentDetailView.swift; sourceTree = "<group>"; };
 		A6D71C892735FAF50004BBDD /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-		A6D71C8B2735FB660004BBDD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		A6D71C92273616000004BBDD /* ToggleStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleStyles.swift; sourceTree = "<group>"; };
 		A6D71C9527361B250004BBDD /* CustomAlertViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewModifier.swift; sourceTree = "<group>"; };
 		A6D71C98273627950004BBDD /* RecentMoitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMoitView.swift; sourceTree = "<group>"; };
@@ -110,6 +108,7 @@
 		A6D71CA327364B200004BBDD /* DoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		A6D71CA527364EEB0004BBDD /* MotiTypeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotiTypeSelectionView.swift; sourceTree = "<group>"; };
 		A6D71CA72736549C0004BBDD /* MoitManerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitManerView.swift; sourceTree = "<group>"; };
+		A6D71CA9273659A60004BBDD /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		D286E4817B24937B40C5512C /* libPods-Moit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Moit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D71C91273600E60004BBDD /* SwiftUIPullToRefresh in Frameworks */,
 				3C33F0078E90C6C6352EA12C /* libPods-Moit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +198,7 @@
 				A65B1DBC27352043003ECBD5 /* LoginViewModel.swift */,
 				A65B1DCF27357F0F003ECBD5 /* DataViewModel.swift */,
 				A699C5922735A6D400ECBA5D /* NotificationViewmodel.swift */,
-				A6D71C8B2735FB660004BBDD /* OrderViewModel.swift */,
+				A6D71CA9273659A60004BBDD /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -410,7 +408,6 @@
 			);
 			name = Moit;
 			packageProductDependencies = (
-				A6D71C90273600E60004BBDD /* SwiftUIPullToRefresh */,
 			);
 			productName = Moit;
 			productReference = A65B1D8A27351248003ECBD5 /* Moit.app */;
@@ -441,7 +438,6 @@
 			);
 			mainGroup = A65B1D8127351248003ECBD5;
 			packageReferences = (
-				A6D71C8F273600E60004BBDD /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 			);
 			productRefGroup = A65B1D8B27351248003ECBD5 /* Products */;
 			projectDirPath = "";
@@ -518,6 +514,7 @@
 				A65B1DA4273516F4003ECBD5 /* SystemViewModel.swift in Sources */,
 				A6D71C882735ECEB0004BBDD /* RestaurentDetailView.swift in Sources */,
 				A699C59E2735B3C100ECBA5D /* UserInfoView.swift in Sources */,
+				A6D71CAA273659A60004BBDD /* OrderViewModel.swift in Sources */,
 				A6D71C9D273634410004BBDD /* PostDetailView.swift in Sources */,
 				A6D71CA22736441F0004BBDD /* CustomNotiView.swift in Sources */,
 				A699C5962735A83400ECBA5D /* NotificationModel.swift in Sources */,
@@ -528,7 +525,6 @@
 				A65B1DB927351DC6003ECBD5 /* PointView.swift in Sources */,
 				A65B1DBD27352043003ECBD5 /* LoginViewModel.swift in Sources */,
 				A6D71C93273616000004BBDD /* ToggleStyles.swift in Sources */,
-				A6D71C8C2735FB660004BBDD /* OrderViewModel.swift in Sources */,
 				A699C5A22735B5DC00ECBA5D /* UsageListView.swift in Sources */,
 				A699C5A02735B52F00ECBA5D /* UserInfoCell.swift in Sources */,
 				A6D71C9627361B250004BBDD /* CustomAlertViewModifier.swift in Sources */,
@@ -745,25 +741,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A6D71C8F273600E60004BBDD /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A6D71C90273600E60004BBDD /* SwiftUIPullToRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A6D71C8F273600E60004BBDD /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
-			productName = SwiftUIPullToRefresh;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A65B1D8227351248003ECBD5 /* Project object */;
 }
