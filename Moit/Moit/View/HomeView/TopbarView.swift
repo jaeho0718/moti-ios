@@ -24,8 +24,10 @@ struct TopbarView: View {
             }
             
             Spacer()
-            Button(action:{}){
-                Image(systemName: "gearshape.fill").font(.system(size: 20))
+            Button(action:{
+                dataViewmodel.loadLatestPost()
+            }){
+                Image(systemName: "arrow.clockwise.circle.fill").font(.system(size: 20))
             }
         }.padding(.horizontal)
             .padding(.top).padding(.bottom,8)
