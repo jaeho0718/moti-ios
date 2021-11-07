@@ -19,6 +19,7 @@ class LoginViewModel : ObservableObject{
             case .success(let token):
                 if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/user/me" ) {
                     var request = URLRequest(url: url)
+                    print("accessToken : \(token.accessToken)")
                     request.httpMethod = "GET"
                     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                     request.addValue("Bearer \(token.accessToken)",
@@ -91,14 +92,13 @@ class LoginViewModel : ObservableObject{
     }
     
     /// 이메일을 이용해 회원가입합니다.
-    func signInWithEmail(email : String,name : String,phoneNumber : String,password : String,
+    func signInWithEmail(uniId : Int ,email : String,name : String,phoneNumber : String,password : String,
                          completion : @escaping (Result<Int,Error>) -> Void ) {
         if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/user") {
             var request = URLRequest(url: url)
             do {
-                let body_data = try JSONEncoder().encode(["email":email,"name" : name,
-                                                          "phoneNumber" : phoneNumber,
-                                                          "password" : password])
+                let body_data = try JSONEncoder().encode(SignUpData(email: email
+                                                                    , name: name, phoneNumber: phoneNumber, password: password, universityId: uniId))
                 print("Send \(String(data: body_data, encoding: .utf8))")
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 request.httpBody = body_data

@@ -18,7 +18,7 @@ struct PostMiniView: View {
         }){
             VStack(alignment : .leading,spacing: 5){
                 Group {
-                    if let url = URL(string: post.thumnailImageKey) {
+                    if let url = URL(string: post.thumbnailImageKey) {
                         AsyncImageView(url: url, placeholder: {
                             RoundedRectangle(cornerRadius: 6)
                         },image: { uiimage in

@@ -36,7 +36,7 @@ struct SectionView<Destination : View> : View {
                 ScrollView(.horizontal, showsIndicators: false){
                     if posts.isEmpty {
                         Text("주문이 없어요.").font(.custom("DoHyeon-Regular", size: 15))
-                            .padding()
+                            .padding(18)
                     }
                     LazyHStack{
                         ForEach(posts){ post in

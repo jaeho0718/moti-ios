@@ -50,7 +50,7 @@ struct RecentMoitView: View {
                         .frame(maxWidth:.infinity,minHeight: 50)
                 }.accentColor(tabitem == .share ? .black : Color("SecondaryTextColor"))
                 Button(action:{tabitem = .together}){
-                    Text("모여서 단건배달")
+                    Text("모여서 단건 배달")
                         .font(.custom("DoHyeon-Regular", size: 20))
                         .frame(maxWidth:.infinity,minHeight: 50)
                 }.accentColor(tabitem == .together ? .black : Color("SecondaryTextColor"))
@@ -59,10 +59,18 @@ struct RecentMoitView: View {
             Divider()
             
             ScrollView(.vertical,showsIndicators: false){
-                ForEach(dataViewmodel.latestPost){ post in
-                    PostLargeCellView(post: post)
-                        .environment(\.postType, tabitem)
-                        .padding(.top,dataViewmodel.Posts.first?.id == post.id ? 10 : 0)
+                if postdetailType == .latest {
+                    ForEach(dataViewmodel.latestPost){ post in
+                        PostLargeCellView(post: post)
+                            .environment(\.postType, tabitem)
+                            .padding(.top,dataViewmodel.latestPost.first?.id == post.id ? 10 : 0)
+                    }
+                } else {
+                    ForEach(dataViewmodel.deadlinePost){ post in
+                        PostLargeCellView(post: post)
+                            .environment(\.postType, tabitem)
+                            .padding(.top,dataViewmodel.deadlinePost.first?.id == post.id ? 10 : 0)
+                    }
                 }
             }.padding(.horizontal,17)
         }

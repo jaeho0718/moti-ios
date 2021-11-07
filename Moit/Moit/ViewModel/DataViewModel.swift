@@ -11,7 +11,7 @@ import Alamofire
 @MainActor
 class DataViewModel : ObservableObject {
     @Published var latestPost : [Post] = []
-    @Published var Posts : [Post] = []
+    @Published var deadlinePost : [Post] = []
     @Published var categories : [Category] = []
     @Published var usageItems : [Usage] = [
         .init(id: 0, date: Date(), point: 7300, restraunt: "교촌치킨 중앙대후문점")
@@ -64,11 +64,12 @@ class DataViewModel : ObservableObject {
             switch response {
             case .success(let token):
                 let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
-                AF.request(url, method: .get, parameters: ["sortBy":"latest"], headers: [authHeader])
+                AF.request(url, method: .get, parameters: ["sortBy":"latest","searchKey":""], headers: [authHeader])
                     .responseData(completionHandler: { responseData in
                         switch responseData.result {
                         case .success(let data):
                             do{
+                                print("Post data : \(String(data: data, encoding: .utf8))")
                                 let results = try JSONDecoder().decode([String:[Post]].self
                                                                        , from: data)
                                 if let result = results["orders"] {
@@ -94,7 +95,7 @@ class DataViewModel : ObservableObject {
             switch response {
             case .success(let token):
                 let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
-                AF.request(url, method: .get, parameters: ["categoryId":categoryId], headers: [authHeader])
+                AF.request(url, method: .get, parameters: ["categoryId":categoryId,"searchKey":""], headers: [authHeader])
                     .responseData(completionHandler: { responseData in
                         switch responseData.result {
                         case .success(let data):

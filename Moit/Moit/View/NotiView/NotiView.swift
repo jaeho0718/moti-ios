@@ -18,16 +18,24 @@ struct NotiView: View {
                 Spacer()
             }.padding(.horizontal,15).padding(.vertical,4)
             ScrollView(.vertical,showsIndicators: false){
-                LazyVStack{
-                    ForEach(notification.notifications){ noti in
-                        NotiCellView(notification: noti)
-                        Divider()
-                    }
-                }.padding(.horizontal,15)
+                if notification.notifications.isEmpty {
+                    Text("알림이 없어요.").font(.custom("DoHyeon-Regular", size: 15))
+                        .padding()
+                } else {
+                    LazyVStack{
+                        ForEach(notification.notifications){ noti in
+                            NotiCellView(notification: noti)
+                            Divider()
+                        }
+                    }.padding(.horizontal,15)
+                }
             }
         }
         .background(Color.white.ignoresSafeArea())
         .navigationTitle("").navigationBarHidden(true)
+        .onAppear{
+            notification.getNotificationList()
+        }
     }
 }
 

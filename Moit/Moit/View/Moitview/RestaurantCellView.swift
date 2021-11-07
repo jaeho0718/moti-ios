@@ -36,7 +36,7 @@ struct RestaurantCellView: View {
                     .font(.custom("DoHyeon-Regular", size: 16))
                     .foregroundColor(.black)
                 Spacer(minLength: 5)
-                if let fee = restaurent.fees.first?.delivertFee {
+                if let fee = restaurent.fees.first?.deliveryFee {
                     Text("배달팁  \(fee)")
                         .font(.custom("DoHyeon-Regular", size: 16))
                         .foregroundColor(Color("SecondaryTextColor"))

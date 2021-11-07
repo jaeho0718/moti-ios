@@ -28,7 +28,7 @@ struct UserInfoView: View {
                 UserInfoCell(key: "별명", value: user.name)
                 UserInfoCell(key: "이메일 주소", value: user.email)
                 UserInfoCell(key: "이메일 주소", value: user.phoneNumber)
-                UserInfoCell(key: "학교", value: "Uni")
+                UserInfoCell(key: "학교", value: user.universityName)
             }.padding(.horizontal,15)
         }.background(Color.white)
     }

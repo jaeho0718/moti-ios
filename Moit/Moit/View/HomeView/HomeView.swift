@@ -21,7 +21,7 @@ struct HomeView: View {
                         .environmentObject(dataViewmodel)
                 }
                 
-                SectionView(title: "마감임박", posts: $dataViewmodel.Posts){
+                SectionView(title: "마감임박", posts: $dataViewmodel.deadlinePost){
                     RecentMoitView()
                         .environment(\.postdetailType, .deadline)
                         .environmentObject(dataViewmodel)
@@ -34,7 +34,7 @@ struct HomeView: View {
         .navigationTitle("").navigationBarHidden(true)
         .onAppear{
             dataViewmodel.loadLatestPost()
-            dataViewmodel.loadCategories()
+            //dataViewmodel.loadCategories()
         }
     }
 }

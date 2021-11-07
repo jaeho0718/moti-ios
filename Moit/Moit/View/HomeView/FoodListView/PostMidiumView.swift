@@ -17,7 +17,7 @@ struct PostMidiumView: View {
         }){
             HStack(alignment:.top , spacing:8){
                 Group{
-                    if let url = URL(string: post.thumnailImageKey) {
+                    if let url = URL(string: post.thumbnailImageKey) {
                         AsyncImageView(url: url, placeholder: {
                             Rectangle()
                         },image: { uiimage in

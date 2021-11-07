@@ -14,10 +14,13 @@ struct TopbarView: View {
     var body: some View {
         HStack{
             VStack(alignment:.leading){
-                Text("중앙대")
-                    .font(.custom("DoHyeon-Regular", size: 25))
-                Text("서울캠퍼스")
-                    .font(.custom("DoHyeon-Regular", size: 12))
+                if let user = login.user {
+                    Text(user.universityName)
+                        .font(.custom("DoHyeon-Regular", size: 23))
+                } else {
+                    Text("로그인 해주세요.")
+                        .font(.custom("DoHyeon-Regular", size: 23))
+                }
             }
             
             Spacer()

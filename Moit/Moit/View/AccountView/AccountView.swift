@@ -15,13 +15,17 @@ struct AccountView: View {
             if let user = login.user {
                 UserInfoView(user: user)
             } else {
-                
+                Text("로그인이 필요합니다.").font(.custom("DoHyeon-Regular", size: 15))
+                    .padding()
             }
             PointView()
             UsageListView(usageDatas: $dataViewmodel.usageItems)
         }
         .background(Color("GroupedBackgroundColor").ignoresSafeArea())
         .navigationTitle("").navigationBarHidden(true)
+        .onAppear{
+            login.getUserData(completion: {_ in })
+        }
     }
 }
 

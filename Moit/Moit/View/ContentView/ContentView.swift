@@ -18,6 +18,7 @@ struct ContentView: View {
                 ZStack{
                     HomeView()
                         .environmentObject(dataViewmodel)
+                        .environmentObject(loginViewmodel)
                         .opacity(system.tabitem == SystemViewModel.TabItems.home ? 1 : 0)
                     SearchView()
                         .environmentObject(dataViewmodel)

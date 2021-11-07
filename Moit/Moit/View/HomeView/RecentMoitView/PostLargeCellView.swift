@@ -18,7 +18,7 @@ struct PostLargeCellView: View {
         }){
             HStack{
                 Group{
-                    if let url = URL(string: post.thumnailImageKey) {
+                    if let url = URL(string: post.thumbnailImageKey) {
                         AsyncImageView(url: url , placeholder: {
                             Rectangle()
                         },image: { uiimage in
@@ -37,6 +37,8 @@ struct PostLargeCellView: View {
                          .foregroundColor(.black)
                      가게 이름으로 바꾸기
                      */
+                    Text("Title").font(.custom("DoHyeon-Regular", size: 17))
+                        .foregroundColor(.black)
                     Spacer()
                     if postType == .share {
                         Text("소분 용기 : 가게 요청")

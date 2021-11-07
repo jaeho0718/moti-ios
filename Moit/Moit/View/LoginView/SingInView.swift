@@ -22,7 +22,7 @@ struct SignInView: View {
     @State private var password : String = ""
     
     var body: some View {
-        VStack(spacing:50){
+        VStack(spacing:30){
             Group{
                 HStack{
                     Text("회원 가입").font(.custom("DoHyeon-Regular", size: 28))
@@ -39,10 +39,11 @@ struct SignInView: View {
                     .textFieldStyle(BorderedTextFieldStyle())
                 SecureField("비밀번호", text: $password)
                     .textFieldStyle(BorderedTextFieldStyle())
-                Picker("대학교 선택", selection: $id, content: {
+                Picker(universities.first(where: {$0.id == id})?.name ?? "대학교를 선택해주세요."
+                       , selection: $id, content: {
                     Text("대학교를 선택해주세요.")
                     ForEach(universities,id : \.id){ element in
-                        Text(element.name).tag(element.id)
+                        Text(element.name).tag(element.id as Int?)
                     }
                 }).pickerStyle(.menu)
                 .frame(maxWidth:.infinity,alignment: .leading)
@@ -52,39 +53,42 @@ struct SignInView: View {
             }
             .padding(.horizontal,15)
             Button(action:{
-                login.signInWithEmail(email: email, name: name,
-                                      phoneNumber: phoneNumber, password: password, completion: {
-                    response in
-                    switch response {
-                    case .success(_) :
-                        login.loginWithEmail(email: email, password: password, completion: { result in
-                            switch result {
-                            case .success(let token) :
-                                KeyChainModel.shared.createValue(data: token, completion: {
-                                    keyResult in
-                                    switch keyResult {
-                                    case .success(_) :
-                                        isOpen = false
-                                        presentationMode.wrappedValue.dismiss()
-                                    case .failure(let error) :
-                                        print("KeyChain save error : \(error.localizedDescription)")
-                                    }
-                                })
-                            case .failure(let error) :
-                                print("Sign In error : \(error.localizedDescription)")
-                            }
-                        })
-                    case .failure(let error) :
-                        print("Sign In error : \(error.localizedDescription)")
-                    }
-                })
+                if let id = id {
+                    login.signInWithEmail(uniId: id, email: email, name: name,
+                                          phoneNumber: phoneNumber, password: password, completion: {
+                        response in
+                        switch response {
+                        case .success(_) :
+                            login.loginWithEmail(email: email, password: password, completion: { result in
+                                switch result {
+                                case .success(let token) :
+                                    KeyChainModel.shared.createValue(data: token, completion: {
+                                        keyResult in
+                                        switch keyResult {
+                                        case .success(_) :
+                                            isOpen = false
+                                            presentationMode.wrappedValue.dismiss()
+                                        case .failure(let error) :
+                                            print("KeyChain save error : \(error.localizedDescription)")
+                                        }
+                                    })
+                                case .failure(let error) :
+                                    print("Sign In error : \(error.localizedDescription)")
+                                }
+                            })
+                        case .failure(let error) :
+                            print("Sign In error : \(error.localizedDescription)")
+                        }
+                    })
+                }
             }){
                 Text("회원가입")
                     .font(.custom("DoHyeon-Regular", size: 18))
                     .foregroundColor(.white)
                     .frame(maxWidth:.infinity,minHeight:50)
             }.background(Color("AppAccentColor").ignoresSafeArea())
-            .disabled(password.isEmpty || email.isEmpty || name.isEmpty || phoneNumber.isEmpty)
+            .disabled(password.isEmpty || email.isEmpty || name.isEmpty || phoneNumber.isEmpty
+            || id == nil )
         }
         .toast(isPresenting: $onLoad, alert: {
             AlertToast(displayMode: .alert, type: .loading)

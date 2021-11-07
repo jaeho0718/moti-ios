@@ -114,16 +114,14 @@ struct MenuData : Identifiable,Codable{
     init(from decoder: Decoder) throws {
         let key = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try key.decode(Int.self, forKey: .id)
-        self.restaurantId = try key.decode(Int.self, forKey: .restaurantId)
         self.name = try key.decode(String.self, forKey: .name)
         self.price = try key.decode(Int.self, forKey: .price)
         self.imageKey = try key.decode(String.self, forKey: .imageKey)
         self.isSelected = false
     }
     
-    init(id : Int, restaurantId : Int, name : String, price : Int, imageKey : String) {
+    init(id : Int, name : String, price : Int, imageKey : String) {
         self.id = id
-        self.restaurantId = restaurantId
         self.name = name
         self.price = price
         self.imageKey = imageKey
@@ -131,22 +129,21 @@ struct MenuData : Identifiable,Codable{
     }
     
     var id : Int
-    var restaurantId : Int
     var name : String
     var price : Int
     var imageKey : String
     var isSelected : Bool //Decoder 커스텀하기
     
     enum CodingKeys : CodingKey {
-        case id,restaurantId,name,price,imageKey
+        case id,name,price,imageKey
     }
 }
 
 
 struct Post : Identifiable,Codable{
-    var id : Int
+    var id : Int 
     var restaurantId : Int
-    var thumnailImageKey : String
+    var thumbnailImageKey : String
     var creatorId : Int
     var message : String
     var maxParticipants : Int
@@ -163,12 +160,12 @@ struct Participants : Identifiable,Codable{
 }
 
 struct Restaurant : Identifiable,Codable{
-    var id : Int//
-    var categoryId : Int//
-    var categoryName : String//
-    var menus : [MenuData]//
-    var fees : [Fee]//
-    var name : String//
+    var id : Int
+    var categoryId : Int
+    var categoryName : String
+    var menus : [MenuData]
+    var fees : [Fee]
+    var name : String
     var account : String
     var imageKey : String
     var openAt : String
@@ -179,16 +176,16 @@ struct Restaurant : Identifiable,Codable{
     
     struct Fee : Codable {
         var id : Int
-        var restaurantId : Int
         var priceStart : Int
         var priceEnd : Int
-        var delivertFee : Int
+        var deliveryFee : Int
     }
 }
 
 struct User : Identifiable,Codable{
     var id : Int
-    var university_id : Int?
+    var universityName : String
+    var regionName : String
     var email : String
     var phoneNumber : String
     var name : String
@@ -218,9 +215,14 @@ struct KeychainData : Codable {
 ///주문전송용 구조체
 struct OrderModel : Codable {
     var restaurantId : Int
-    var menus : [[String : Int]]
+    var menus : [MenuProperty]
     var message : String
     var maxParticipants : Int
+    
+    struct MenuProperty : Codable {
+        var menuId : Int
+        var count : Int
+    }
 }
 
 struct UniversityModel : Codable,Identifiable{
@@ -231,4 +233,12 @@ struct UniversityModel : Codable,Identifiable{
 struct Category : Codable,Identifiable{
     var name : CategoryType
     var id : Int
+}
+
+struct SignUpData : Codable {
+    var email : String
+    var name : String
+    var phoneNumber : String
+    var password : String
+    var universityId : Int
 }

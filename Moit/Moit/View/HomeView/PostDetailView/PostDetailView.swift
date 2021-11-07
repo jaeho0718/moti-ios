@@ -34,14 +34,14 @@ struct PostDetailView: View {
             .padding(.horizontal)
             ScrollView(.vertical,showsIndicators: false){
                 Group{
-                    if let url = URL(string: post.thumnailImageKey) {
+                    if let url = URL(string: post.thumbnailImageKey) {
                         AsyncImageView(url: url, placeholder: {
                             Rectangle()
                         },image: { uiimage in
                             Image(uiImage: uiimage).resizable()
                         }).aspectRatio(3/2,contentMode: .fill)
                     } else {
-                        Rectangle()
+                        Rectangle().frame(height:250)
                     }
                 }.clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.top,10)

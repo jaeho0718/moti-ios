@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct PaymentView: View {
     
@@ -15,7 +16,7 @@ struct PaymentView: View {
     
     @State private var check : Bool = false
     @State private var done : Bool = false
-    
+    @State private var onLoad : Bool = false
     var restaurent : Restaurant
     
     var body: some View {
@@ -31,10 +32,10 @@ struct PaymentView: View {
             }.padding(.vertical)
             ScrollView(.vertical,showsIndicators: false){
                 VStack(alignment:.leading,spacing : 5){
-                    Text(order.type == .share ? "나누어 먹을래요" : "모여서 단건배달")
+                    Text("새 모잇 만들기")
                         .font(.custom("DoHyeon-Regular", size: 28))
                         .foregroundColor(.black)
-                    Text("나누어 먹을래요").font(.custom("DoHyeon-Regular", size: 14))
+                    Text(order.type == .share ? "나누어 먹을래요" : "모여서 단건배달").font(.custom("DoHyeon-Regular", size: 14))
                         .foregroundColor(Color("AppAccentColor"))
                 }.frame(maxWidth:.infinity,alignment: .leading)
                 
@@ -185,11 +186,13 @@ struct PaymentView: View {
                            content: "\(order.totalPrice()) 포인트가 차감되며 주문 실패시 고객님의 계정으로 반환합니다.",
                            cancleTitle: "등록 취소", confirmTitle: "확인",
                            cancelAction: {}, confirmAction: {
-                order.postOrder(completion: { result in
-                    done.toggle()
+                onLoad = true
+                order.postOrder(id: restaurent.id, completion: { result in
+                    onLoad = false
                     switch result{
                     case .success(_) :
                         print("성공적으로 주문함")
+                        done.toggle()
                     case .failure(let error) :
                         print("주문 Error : \(error.localizedDescription)")
                     }
@@ -197,6 +200,9 @@ struct PaymentView: View {
             })
         })
         .navigationTitle("").navigationBarHidden(true)
+        .toast(isPresenting: $onLoad, alert: {
+            AlertToast(displayMode: .alert, type: .loading)
+        })
     }
 }
 
