@@ -94,13 +94,15 @@ class DataViewModel : ObservableObject {
             switch response {
             case .success(let token):
                 let authHeader : HTTPHeader = .init(name: "Authorization", value: "Bearer \(token.accessToken)")
-                AF.request(url, method: .get, parameters: ["categoryId":categoryId,"searchKey":""], headers: [authHeader])
+                print("load : \(categoryId+1)")
+                AF.request(url, method: .get, parameters: ["categoryId":categoryId+1,"searchKey":""], headers: [authHeader])
                     .responseData(completionHandler: { responseData in
                         switch responseData.result {
                         case .success(let data):
                             do{
                                 let results = try JSONDecoder().decode([String:[Post]].self
                                                                        , from: data)
+                                print("\(categoryId+1) result : \(String(data: data, encoding: .utf8))")
                                 if let result = results["orders"] {
                                     self.categoryPosts[categoryId] = result
                                 }

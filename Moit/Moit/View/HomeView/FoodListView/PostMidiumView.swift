@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PostMidiumView: View {
-    
+    @EnvironmentObject var dataViewmodel : DataViewModel
     var post : Post
     
     var body: some View {
         NavigationLink(destination:{
-            PostDetailView(post: post)
+            PostDetailView(post: post).environmentObject(dataViewmodel)
         }){
             HStack(alignment:.top , spacing:8){
                 Group{
@@ -36,6 +36,8 @@ struct PostMidiumView: View {
                          .foregroundColor(Color("SecondaryTextColor")).padding(.top,3)
                      가게 이름으로 바꾸기
                      */
+                    Text("Title").font(.custom("DoHyeon-Regular", size: 16))
+                            .foregroundColor(.black)
                     Spacer()
                     Text("\(post.nowParticipants)/\(post.maxParticipants)명")
                         .font(.custom("DoHyeon-Regular", size: 12))

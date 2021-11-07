@@ -28,7 +28,7 @@ struct FoodListView: View {
             LazyVStack(spacing:10){
                 //filter 추가하기
                 if let categoryPosts = dataViewmodel.categoryPosts[selectedCategory.id] {
-                    ForEach(categoryPosts){ post in
+                    ForEach(categoryPosts.filter({$0.maxParticipants > $0.nowParticipants})){ post in
                         PostMidiumView(post: post)
                     }.padding(.horizontal,18)
                 }
