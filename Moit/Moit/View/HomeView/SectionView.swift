@@ -34,12 +34,12 @@ struct SectionView<Destination : View> : View {
             }
             ScrollViewReader{ proxy in
                 ScrollView(.horizontal, showsIndicators: false){
-                    if posts.isEmpty {
+                    if posts.filter({$0.maxParticipants > $0.nowParticipants}).isEmpty {
                         Text("주문이 없어요.").font(.custom("DoHyeon-Regular", size: 15))
                             .padding(18)
                     }
                     LazyHStack{
-                        ForEach(posts){ post in
+                        ForEach(posts.filter({$0.maxParticipants > $0.nowParticipants})){ post in
                             PostMiniView(post: post).id(post.id)
                                 .padding(.leading, posts.first?.id == post.id ? 18 : 0)
                                 .padding(.trailing, posts.last?.id == post.id ? 18 : 0)

@@ -9,12 +9,13 @@ import SwiftUI
 
 struct PostLargeCellView: View {
     @Environment(\.postType) var postType
+    @EnvironmentObject var dataViewmodel : DataViewModel
     
     var post : Post
     
     var body: some View {
         NavigationLink(destination:{
-            PostDetailView(post: post)
+            PostDetailView(post: post).environmentObject(dataViewmodel)
         }){
             HStack{
                 Group{

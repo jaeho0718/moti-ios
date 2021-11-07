@@ -60,14 +60,16 @@ struct RecentMoitView: View {
             
             ScrollView(.vertical,showsIndicators: false){
                 if postdetailType == .latest {
-                    ForEach(dataViewmodel.latestPost){ post in
+                    ForEach(dataViewmodel.latestPost.filter({$0.maxParticipants > $0.nowParticipants})){ post in
                         PostLargeCellView(post: post)
+                            .environmentObject(dataViewmodel)
                             .environment(\.postType, tabitem)
                             .padding(.top,dataViewmodel.latestPost.first?.id == post.id ? 10 : 0)
                     }
                 } else {
-                    ForEach(dataViewmodel.deadlinePost){ post in
+                    ForEach(dataViewmodel.deadlinePost.filter({$0.maxParticipants > $0.nowParticipants})){ post in
                         PostLargeCellView(post: post)
+                            .environmentObject(dataViewmodel)
                             .environment(\.postType, tabitem)
                             .padding(.top,dataViewmodel.deadlinePost.first?.id == post.id ? 10 : 0)
                     }

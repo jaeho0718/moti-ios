@@ -74,7 +74,6 @@ class DataViewModel : ObservableObject {
                                                                        , from: data)
                                 if let result = results["orders"] {
                                     self.latestPost = result
-                                    print("Latest : \(result)")
                                 }
                             } catch let error {
                                 print(error.localizedDescription)
