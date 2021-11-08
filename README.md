@@ -1,7 +1,7 @@
 
 # 한번에,빠르게 moit - iOS
 
-![메인 뷰](./READEME_Resource/MainView.png){: width : "80%" height : "80%"}
+![메인 뷰](./Assets/HomeView.png)
 
 ![lineces](https://img.shields.io/github/license/jaeho0718/moti-ios)
 ![version](https://img.shields.io/badge/version-iOS14.0-blueviolet)
