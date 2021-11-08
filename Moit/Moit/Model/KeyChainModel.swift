@@ -8,6 +8,7 @@
 import Foundation
 import Security
 
+//본래 키체인에 Apikey를 저장하려했지만 시간이 부족해 하지 못함.
 final class KeyChainModel {
     private let service = "MotiKey_ABCD"
     

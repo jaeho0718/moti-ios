@@ -17,7 +17,7 @@ class LoginViewModel : ObservableObject{
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
-                if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/user/me" ) {
+                if let url = URL(string: Api.user.request) {
                     var request = URLRequest(url: url)
                     print("accessToken : \(token.accessToken)")
                     request.httpMethod = "GET"
@@ -52,7 +52,7 @@ class LoginViewModel : ObservableObject{
     ///이메일로 로그인합니다, Response로 온 Accesstoken을 키체인에 저장하는 기능은 별도로 구현해야함.
     func loginWithEmail(email : String, password : String,
                         completion : @escaping (Result<LoginResponse,Error>) -> Void ) {
-        if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/auth/login") {
+        if let url = URL(string: Api.login.request) {
             do {
                 let bodyData : [String : String] = ["email":email
                                                     ,"password" : password]
@@ -94,7 +94,7 @@ class LoginViewModel : ObservableObject{
     /// 이메일을 이용해 회원가입합니다.
     func signInWithEmail(uniId : Int ,email : String,name : String,phoneNumber : String,password : String,
                          completion : @escaping (Result<Int,Error>) -> Void ) {
-        if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/user") {
+        if let url = URL(string: Api.signIn.request) {
             var request = URLRequest(url: url)
             do {
                 let body_data = try JSONEncoder().encode(SignUpData(email: email

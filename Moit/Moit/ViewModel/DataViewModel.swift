@@ -26,7 +26,7 @@ class DataViewModel : ObservableObject {
     
     /// 이름을 통해 음식점을 검색합니다.
     func searchRestaurant(text : String, completion : @escaping (Result<[Restaurant],Error>) -> Void){
-        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/restaurant"
+        let url = Api.restaurant.request
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
@@ -59,7 +59,7 @@ class DataViewModel : ObservableObject {
     
     /// 최근의 포스트를 불러옵니다.
     func loadLatestPost() {
-        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
+        let url = Api.order.request
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
@@ -89,7 +89,7 @@ class DataViewModel : ObservableObject {
     }
     
     func loadCategoryPost(categoryId : Int) {
-        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
+        let url = Api.order.request
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
@@ -121,7 +121,7 @@ class DataViewModel : ObservableObject {
     
     ///Post에 Join합니다.
     func joinPost(id : Int, completion : @escaping (Result<Bool,Error>) -> Void ) {
-        let url_str = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order/\(id)/join"
+        let url_str = Api.join(id).request
         if let url = URL(string: url_str) {
             KeyChainModel.shared.readValue(completion: { response in
                 switch response {
@@ -153,7 +153,7 @@ class DataViewModel : ObservableObject {
     
     ///이름을 이용하여 현재 진행중인 주문을 확인합니다.
     func searchPost(text : String, completion : @escaping (Result<[Post],Error>) -> Void){
-        let url = "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order"
+        let url = Api.order.request
         KeyChainModel.shared.readValue(completion: { response in
             switch response {
             case .success(let token):
@@ -185,7 +185,7 @@ class DataViewModel : ObservableObject {
     
     //모든 카테고리를 가져옵니다.
     func loadCategories() {
-        if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/category") {
+        if let url = URL(string: Api.category.request ) {
             var request = URLRequest(url: url)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "GET"
@@ -223,7 +223,7 @@ class DataViewModel : ObservableObject {
     
     //대학정보를 불러옵니다.
     func loadUniversityList(completion : @escaping (Result<[UniversityModel],Error>) -> Void ) {
-        if let url = URL(string: "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/university") {
+        if let url = URL(string: Api.university.request) {
             var request = URLRequest(url: url)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "GET"

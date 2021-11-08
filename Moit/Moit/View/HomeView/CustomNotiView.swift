@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///사용자에게 알림을 보낼 때 쓰는 뷰
 struct CustomNotiView : View {
     
     @Binding var check : Bool

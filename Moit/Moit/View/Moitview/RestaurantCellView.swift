@@ -46,12 +46,23 @@ struct RestaurantCellView: View {
     }
 }
 
-/*
+
  struct RestaurantCellView_Previews: PreviewProvider {
      static var previews: some View {
-         RestaurantCellView(restaurent: .init(id: 0, category_id: 0, open_at: 0, close_at: 0, location_id: 0, delivery_fee: 0, account: "", imageURL: "", created_at: "", updated_at: ""))
+         RestaurantCellView(restaurent: .init(id: 0, categoryId: 1, categoryName: "치킨"
+                                              , menus: [.init(id: 0, name: "허니콤보"
+                                                          , price: 12000
+                                                          , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg"),
+                                                        .init(id: 0, name: "교촌레드스틱"
+                                                                    , price: 12000
+                                                                    , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg")
+                                                       ]
+                                              , fees: [], name: "교촌치킨", account: "0000"
+                                              , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg"
+                                              , openAt: "10:00", closeAt: "24:00"
+                                              , createdAt: "", updatedAt: ""))
              .environmentObject(OrderViewModel())
              .environmentObject(DataViewModel())
      }
  }
- */
+ 

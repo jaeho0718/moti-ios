@@ -59,12 +59,15 @@ struct PostMidiumView: View {
     
 }
 
-/*
+
  struct PostMidiumView_Previews: PreviewProvider {
      static var previews: some View {
-         PostMidiumView(post: .init(id: 1, writer_id: 1, title: "도미노피자 여의도점"
-                                    ,content: "치즈 퐁듀", location_id: 10, max_participants: 3
-                                    , price: 10, delivery_fee: 8143))
+         PostMidiumView(post: .init(id: 0, restaurantId: 0
+                                    , thumbnailImageKey: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201707/19/80af45c3-e5d6-4774-9916-974d5c7e0275.gif"
+                                    , creatorId: 0, message: "맛있게 부탁드려요"
+                                    , maxParticipants: 10, nowParticipants: 3
+                                    , totalPrice: 21000, createdAt: ""
+                                    , updatedAt: ""))
      }
  }
- */
+ 

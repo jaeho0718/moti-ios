@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C33F0078E90C6C6352EA12C /* libPods-Moit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D286E4817B24937B40C5512C /* libPods-Moit.a */; };
+		A6235DAD27389D44003F0A24 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6235DAC27389D44003F0A24 /* Api.swift */; };
 		A65B1D8E27351248003ECBD5 /* MoitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D8D27351248003ECBD5 /* MoitApp.swift */; };
 		A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B1D8F27351248003ECBD5 /* ContentView.swift */; };
 		A65B1D9227351249003ECBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65B1D9127351249003ECBD5 /* Assets.xcassets */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		18BF286199ADB89B02510FCE /* Pods-Moit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moit.release.xcconfig"; path = "Target Support Files/Pods-Moit/Pods-Moit.release.xcconfig"; sourceTree = "<group>"; };
 		2A46BEE48D45D9139CDEABD0 /* Pods-Moit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moit.debug.xcconfig"; path = "Target Support Files/Pods-Moit/Pods-Moit.debug.xcconfig"; sourceTree = "<group>"; };
+		A6235DAA2737A5CD003F0A24 /* Moit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moit.entitlements; sourceTree = "<group>"; };
+		A6235DAC27389D44003F0A24 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		A65B1D8A27351248003ECBD5 /* Moit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65B1D8D27351248003ECBD5 /* MoitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoitApp.swift; sourceTree = "<group>"; };
 		A65B1D8F27351248003ECBD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +151,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A6235DAB27389D08003F0A24 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				A6D71CAD273662670004BBDD /* KeychainError.swift */,
+				A6D71CAF273667E10004BBDD /* DataError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		A65B1D8127351248003ECBD5 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 		A65B1D8C27351248003ECBD5 /* Moit */ = {
 			isa = PBXGroup;
 			children = (
+				A6235DAA2737A5CD003F0A24 /* Moit.entitlements */,
 				A6D71CBC273717AF0004BBDD /* README.md */,
 				A65B1DCB27357C22003ECBD5 /* Font */,
 				A65B1DC027356480003ECBD5 /* Info.plist */,
@@ -193,10 +206,9 @@
 		A65B1D9B27351254003ECBD5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A6D71CB92736B2360004BBDD /* LoginView */,
-				A6D71CA327364B200004BBDD /* DoneView.swift */,
-				A6D71C9427361B000004BBDD /* CustomAlertView */,
 				A65B1DA5273517F5003ECBD5 /* ContentView */,
+				A6D71CB92736B2360004BBDD /* LoginView */,
+				A6D71C9427361B000004BBDD /* CustomAlertView */,
 				A699C5992735AF5600ECBA5D /* Moitview */,
 				A699C58D27359CC700ECBA5D /* Style */,
 				A65B1DAA27351B6B003ECBD5 /* HomeView */,
@@ -224,12 +236,12 @@
 		A65B1D9D2735126D003ECBD5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6235DAC27389D44003F0A24 /* Api.swift */,
+				A6235DAB27389D08003F0A24 /* Error */,
 				A65B1D9E27351296003ECBD5 /* DataModel.swift */,
 				A699C5952735A83400ECBA5D /* NotificationModel.swift */,
 				A699C5972735AA4300ECBA5D /* DateModel.swift */,
 				A6D71CAB27365A160004BBDD /* KeyChainModel.swift */,
-				A6D71CAD273662670004BBDD /* KeychainError.swift */,
-				A6D71CAF273667E10004BBDD /* DataError.swift */,
 				A6D71CB127367F540004BBDD /* ResponseModel.swift */,
 			);
 			path = Model;
@@ -341,6 +353,7 @@
 		A699C5992735AF5600ECBA5D /* Moitview */ = {
 			isa = PBXGroup;
 			children = (
+				A6D71CA327364B200004BBDD /* DoneView.swift */,
 				A699C59A2735AF5D00ECBA5D /* MoitView.swift */,
 				A6D71C852735E93B0004BBDD /* RestaurantCellView.swift */,
 				A6D71C872735ECEB0004BBDD /* RestaurentDetailView.swift */,
@@ -542,6 +555,7 @@
 				A65B1D9027351248003ECBD5 /* ContentView.swift in Sources */,
 				A699C5982735AA4300ECBA5D /* DateModel.swift in Sources */,
 				A65B1DD027357F0F003ECBD5 /* DataViewModel.swift in Sources */,
+				A6235DAD27389D44003F0A24 /* Api.swift in Sources */,
 				A65B1DBF27352289003ECBD5 /* TopbarView.swift in Sources */,
 				A65B1DA22735138E003ECBD5 /* SplashView.swift in Sources */,
 				A6D71CAE273662670004BBDD /* KeychainError.swift in Sources */,
@@ -715,6 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moit/Moit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moit/Preview Content\"";
@@ -746,6 +761,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moit/Moit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Moit/Preview Content\"";

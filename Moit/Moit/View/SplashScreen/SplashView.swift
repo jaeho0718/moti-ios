@@ -46,34 +46,7 @@ struct SplashView: View {
                                         .frame(maxWidth:.infinity,minHeight: 35)
                                 }.background(Color.white).cornerRadius(8)
                                 Button(action:{
-                                    onLoad = true
-                                    login.loginWithEmail(email: email, password: password, completion: {
-                                        response in
-                                        onLoad = false
-                                        switch response {
-                                        case .success(let token) :
-                                            print("Login Success : \(token.accessToken)")
-                                            KeyChainModel.shared.createValue(data: token, completion: {
-                                                keyResponse in
-                                                switch keyResponse {
-                                                case .success(_) :
-                                                    login.getUserData(completion: { response in
-                                                        isOpen = false
-                                                        switch response {
-                                                        case .success(_) :
-                                                                isOpen = false
-                                                        case .failure(let error) :
-                                                            print("AutoLogin error : \(error.localizedDescription)")
-                                                        }
-                                                    })
-                                                case .failure(let error):
-                                                    print("Key chain error : \(error.localizedDescription)")
-                                                }
-                                            })
-                                        case .failure(let error) :
-                                            print("Login Error : \(error.localizedDescription)")
-                                        }
-                                    })
+                                    loginFunction()
                                 }){
                                     Text("로그인")
                                         .font(.custom("DoHyeon-Regular", size: 16))
@@ -109,6 +82,37 @@ struct SplashView: View {
                 }
             })
         }
+    }
+    
+    private func loginFunction() {
+        onLoad = true
+        login.loginWithEmail(email: email, password: password, completion: {
+            response in
+            onLoad = false
+            switch response {
+            case .success(let token) :
+                print("Login Success : \(token.accessToken)")
+                KeyChainModel.shared.createValue(data: token, completion: {
+                    keyResponse in
+                    switch keyResponse {
+                    case .success(_) :
+                        login.getUserData(completion: { response in
+                            isOpen = false
+                            switch response {
+                            case .success(_) :
+                                    isOpen = false
+                            case .failure(let error) :
+                                print("AutoLogin error : \(error.localizedDescription)")
+                            }
+                        })
+                    case .failure(let error):
+                        print("Key chain error : \(error.localizedDescription)")
+                    }
+                })
+            case .failure(let error) :
+                print("Login Error : \(error.localizedDescription)")
+            }
+        })
     }
 }
 

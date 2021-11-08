@@ -94,15 +94,26 @@ struct RestaurentDetailView: View {
     }
 }
 
-/*
+
  struct RestaurentDetailView_Previews: PreviewProvider {
      static var previews: some View {
-         RestaurentDetailView(restaurent:.init(id: <#T##Int#>, category_id: <#T##Int#>, categoryName: <#T##String#>, menus: <#T##[String]#>, fees: <#T##[String]#>, name: <#T##String#>, openAt: <#T##String#>, closeAt: <#T##String#>))
+         RestaurentDetailView(restaurent: .init(id: 0, categoryId: 1, categoryName: "치킨"
+                                                , menus: [.init(id: 0, name: "허니콤보"
+                                                            , price: 12000
+                                                            , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg"),
+                                                          .init(id: 0, name: "교촌레드스틱"
+                                                                      , price: 12000
+                                                                      , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg")
+                                                         ]
+                                                , fees: [], name: "교촌치킨", account: "0000"
+                                                , imageKey: "https://img.hankyung.com/photo/202102/02.24168127.1.jpg"
+                                                , openAt: "10:00", closeAt: "24:00"
+                                                , createdAt: "", updatedAt: ""))
              .environmentObject(DataViewModel())
              .environmentObject(OrderViewModel())
      }
  }
- */
+ 
 
 
 struct MenuCell : View {

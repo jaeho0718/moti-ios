@@ -16,16 +16,16 @@ class OrderViewModel : ObservableObject {
     @Published var needBowl : Bool = false
     
     func totalPrice() -> Int {
-        return menus.filter({$0.isSelected}).map({$0.price})
+        let total = menus.filter({$0.isSelected}).map({$0.price})
             .reduce(0) { (a : Int, b : Int) -> Int in
                 return a + b
             }
+        return total
     }
     
     ///Order를 넣습니다.
     func postOrder(id : Int,completion : @escaping (Result<Bool,Error>) -> Void){
-        if let url = URL(string:
-        "http://moit-server-prod.eba-eecfjwgm.ap-northeast-2.elasticbeanstalk.com/api/v1/order") {
+        if let url = URL(string: Api.order.request) {
             var menudata : [OrderModel.MenuProperty] = []
             for menu in menus.filter({$0.isSelected}) {
                 menudata.append(.init(menuId: menu.id, count: 1))

@@ -132,7 +132,7 @@ struct MenuData : Identifiable,Codable{
     var name : String
     var price : Int
     var imageKey : String
-    var isSelected : Bool //Decoder 커스텀하기
+    var isSelected : Bool
     
     enum CodingKeys : CodingKey {
         case id,name,price,imageKey
